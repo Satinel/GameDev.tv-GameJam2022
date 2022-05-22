@@ -6,8 +6,8 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] int moveSpeed = 10;
     // [SerializeField] float rotationSpeed = 0.15f;
-    float xRange = 29;
-    float zRange = 16;
+    [SerializeField] float xRange = 25;
+    [SerializeField] float zRange = 10;
     float xThrow;
     float zThrow;
 
