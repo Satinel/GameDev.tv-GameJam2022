@@ -5,22 +5,26 @@ using UnityEngine;
 public class PlayerAttacks : MonoBehaviour
 {
     int damage;
+    Animator animator;
+
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     void Swipe()
     {
         if (Input.GetButton("Fire1"))
         {
-            
-            //if (!swipeanimation.isplaying)
-            // {
-                //TODO play Swipe animation
-                //TODO cause an attack somehow
-                Debug.Log("You swiped");
-            // }
+            animator.SetBool("isSwiping", true);
+
+            //TODO play Swipe animation
+            //TODO cause an attack somehow
+            Debug.Log("You swiped");
+        }
+        else
+        {
+            animator.SetBool("isSwiping", false);
         }
 
     }
