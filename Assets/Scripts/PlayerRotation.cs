@@ -4,10 +4,19 @@ using UnityEngine;
 
 public class PlayerRotation : MonoBehaviour
 {
+
     //https://answers.unity.com/questions/803365/make-the-player-face-his-movement-direction.html
     [SerializeField] float rotationSpeed = 0.15f;
+    [SerializeField] Animation runAnimation;
     float xThrow;
     float zThrow;
+    Animator animator;
+
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
+
     void RotatePlayer()
     {
         xThrow = Input.GetAxis("Horizontal");
@@ -19,6 +28,11 @@ public class PlayerRotation : MonoBehaviour
             Quaternion.Slerp(transform.rotation, 
                             Quaternion.LookRotation(lookDirection), 
                             rotationSpeed);
+            animator.SetBool("isMoving", true);
+        }
+        else
+        {
+            animator.SetBool("isMoving", false);
         }
     }
     
