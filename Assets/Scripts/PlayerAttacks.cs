@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class PlayerAttacks : MonoBehaviour
 {
-    int damage;
+    [SerializeField] Transform swipeAOE;
+    [SerializeField] int damage;
+    [SerializeField] float swipeRange = 3f;
+    [SerializeField] LayerMask enemyLayer;
     Animator animator;
 
     void Start()
@@ -14,24 +17,30 @@ public class PlayerAttacks : MonoBehaviour
 
     void Swipe()
     {
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButtonDown("Fire1"))
         {
-            animator.SetBool("isSwiping", true);
-
-            //TODO play Swipe animation
+            damage = 2;
+            animator.SetTrigger("swiping");
             //TODO cause an attack somehow
-            Debug.Log("You swiped");
+            Collider[] enemiesHit = Physics.OverlapSphere(swipeAOE.position, swipeRange, enemyLayer);
+            
+            foreach (Collider enemyHit in enemiesHit)
+            {
+                Debug.Log("You swiped: " + enemyHit.name);
+                enemyHit.GetComponent<Enemy>().getHit(damage);
+            }
         }
-        else
-        {
-            animator.SetBool("isSwiping", false);
-        }
-
     }
+
+    // void OnDrawGizmos()
+    // {
+    //     if (swipeAOE == null) return;
+    //     Gizmos.DrawWireSphere(swipeAOE.position, swipeRange);
+    // }
 
     void Bite()
     {
-        if (Input.GetButton("Fire2"))
+        if (Input.GetButtonDown("Fire2"))
         {
             //TODO play Bite animation
             Debug.Log("You bit");
