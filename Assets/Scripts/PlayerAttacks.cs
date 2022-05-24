@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class PlayerAttacks : MonoBehaviour
 {
-    [SerializeField] Transform swipeAOE;
-    [SerializeField] int damage;
-    [SerializeField] float swipeRange = 3f;
-    [SerializeField] LayerMask enemyLayer;
+    // [SerializeField] float baseDamage = 1;
+    // [SerializeField] Transform swipeAOE;
+    // [SerializeField] Transform biteAOE;
+    // [SerializeField] float swipeRange = 3f;
+    // [SerializeField] float biteRange = 1f;
+    // [SerializeField] LayerMask enemyLayer;
     Animator animator;
 
     void Start()
@@ -19,33 +21,40 @@ public class PlayerAttacks : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            damage = 2;
             animator.SetTrigger("swiping");
-            //TODO cause an attack somehow
-            Collider[] enemiesHit = Physics.OverlapSphere(swipeAOE.position, swipeRange, enemyLayer);
+            //TODO play a sound
+
+            // Collider[] enemiesHit = Physics.OverlapSphere(swipeAOE.position, swipeRange, enemyLayer);
             
-            foreach (Collider enemyHit in enemiesHit)
-            {
-                Debug.Log("You swiped: " + enemyHit.name);
-                enemyHit.GetComponent<Enemy>().getHit(damage);
-            }
+            // foreach (Collider enemyHit in enemiesHit)
+            // {
+            //     Debug.Log("You swiped: " + enemyHit.name);
+            //     enemyHit.GetComponent<Enemy>().getHit(baseDamage);
+            // }
         }
     }
 
     // void OnDrawGizmos()
     // {
-    //     if (swipeAOE == null) return;
-    //     Gizmos.DrawWireSphere(swipeAOE.position, swipeRange);
+        // if (biteAOE == null) return;
+    //     Gizmos.DrawWireSphere(biteAOE.position, biteRange);
     // }
 
     void Bite()
     {
         if (Input.GetButtonDown("Fire2"))
         {
-            //TODO play Bite animation
-            Debug.Log("You bit");
+        //     animator.SetTrigger("biting");
+            
+        //     Collider[] enemiesHit = Physics.OverlapSphere(swipeAOE.position, swipeRange, enemyLayer);
+            
+        //     foreach (Collider enemyHit in enemiesHit)
+        //     {
+        //         Debug.Log("You bit: " + enemyHit.name);
+        //         enemyHit.GetComponent<Enemy>().getHit(baseDamage);
+        //     }
+            Debug.Log("You pushed the bite button");
         }
-        
     }
     
     void Update()

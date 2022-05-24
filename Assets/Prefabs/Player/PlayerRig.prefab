@@ -160,6 +160,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2344281012339381072, guid: fafea0612501a1b45924d5b4716c420b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3123322188468251163, guid: fafea0612501a1b45924d5b4716c420b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.965
@@ -211,7 +215,7 @@ PrefabInstance:
     - target: {fileID: 3474821369282647522, guid: fafea0612501a1b45924d5b4716c420b, type: 3}
       propertyPath: swipeAOE
       value: 
-      objectReference: {fileID: 7849581400114695400}
+      objectReference: {fileID: 0}
     - target: {fileID: 3474821369282647522, guid: fafea0612501a1b45924d5b4716c420b, type: 3}
       propertyPath: swipeRange
       value: 1.75
@@ -240,6 +244,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4342150471881959672, guid: fafea0612501a1b45924d5b4716c420b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4347429678290585326, guid: fafea0612501a1b45924d5b4716c420b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.735
@@ -251,6 +259,18 @@ PrefabInstance:
     - target: {fileID: 4431400828015116321, guid: fafea0612501a1b45924d5b4716c420b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.535
+      objectReference: {fileID: 0}
+    - target: {fileID: 4650778258039489206, guid: fafea0612501a1b45924d5b4716c420b, type: 3}
+      propertyPath: lengthInSec
+      value: 0.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 4650778258039489206, guid: fafea0612501a1b45924d5b4716c420b, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 4819699583948838357, guid: fafea0612501a1b45924d5b4716c420b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6753163963274075368, guid: fafea0612501a1b45924d5b4716c420b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -324,6 +344,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 1.344
       objectReference: {fileID: 0}
+    - target: {fileID: 6919853069647838587, guid: fafea0612501a1b45924d5b4716c420b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6919853070667649157, guid: fafea0612501a1b45924d5b4716c420b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.965
@@ -385,15 +409,10 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 37950249820c02240a56fa8fb31e9497, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!4 &7849581400114695400 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5413708668345607750, guid: fafea0612501a1b45924d5b4716c420b, type: 3}
-  m_PrefabInstance: {fileID: 2868243103799110318}
-  m_PrefabAsset: {fileID: 0}

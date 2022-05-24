@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] int hitPoints = 5;
+    [SerializeField] float hitPoints = 50;
 
     void Start()
     {
