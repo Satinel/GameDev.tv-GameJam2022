@@ -11,10 +11,24 @@ public class PlayerAttacks : MonoBehaviour
     // [SerializeField] float biteRange = 1f;
     // [SerializeField] LayerMask enemyLayer;
     Animator animator;
+    PlayerMovement playerMovement;
 
     void Start()
     {
         animator = GetComponent<Animator>();
+        playerMovement = GetComponentInParent<PlayerMovement>();
+    }
+
+    void ToggleMovement()
+    {
+        if (playerMovement.enabled)
+        {
+            playerMovement.enabled = false;
+        }
+        else
+        {
+            playerMovement.enabled = true;
+        }
     }
 
     void Swipe()
