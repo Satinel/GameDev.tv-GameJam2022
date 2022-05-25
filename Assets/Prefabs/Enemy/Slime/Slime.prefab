@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 444156370888846567}
   - component: {fileID: 7530524818045073248}
   - component: {fileID: 882304664121448570}
+  - component: {fileID: 1683540292}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Untagged
@@ -154,6 +155,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1683540292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444156370888846566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd6a5a87283813046a883e5a8d81b25b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTarget: {fileID: 0}
+  speed: 1.25
+  aggroRange: 20
+  attackRange: 5
 --- !u!1 &1320414688456539515
 GameObject:
   m_ObjectHideFlags: 0
@@ -5816,6 +5833,10 @@ PrefabInstance:
     - target: {fileID: 917220579926791261, guid: abc1b72c335338e4db9332c3916dfbc3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7999245775761202226, guid: abc1b72c335338e4db9332c3916dfbc3, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8235563534121135641, guid: abc1b72c335338e4db9332c3916dfbc3, type: 3}
       propertyPath: m_Name
