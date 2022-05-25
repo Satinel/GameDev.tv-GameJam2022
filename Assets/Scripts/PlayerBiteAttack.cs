@@ -8,10 +8,15 @@ public class PlayerBiteAttack : MonoBehaviour
     int playerSize = 10;
     PlayerHealth playerHealth;
 
-    // Start is called before the first frame update
     void Start()
     {
-        GetComponentInParent<PlayerHealth>();
+        // Transform[] transforms = GetComponentsInParent<Transform>();
+        // foreach (Transform transform in transforms)
+        // {
+        //     Debug.Log(transform.gameObject.name);
+        // }
+        playerHealth = GetComponentInParent<PlayerHealth>();
+        Debug.Log(playerHealth);
     }
 
     void OnTriggerEnter(Collider other)
@@ -27,11 +32,11 @@ public class PlayerBiteAttack : MonoBehaviour
         {
             //TODO make a script for foods to get eaten
             //other.GetComponent<Food>().getAte(damage);
+            Debug.Log("I ate " + other.gameObject.name);
             playerHealth.IncreaseHealth();
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         

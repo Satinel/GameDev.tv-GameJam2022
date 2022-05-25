@@ -53,13 +53,11 @@ public class PlayerAttacks : MonoBehaviour
             animator.SetTrigger("biting");
             
         //     Collider[] enemiesHit = Physics.OverlapSphere(swipeAOE.position, swipeRange, enemyLayer);
-            
         //     foreach (Collider enemyHit in enemiesHit)
         //     {
         //         Debug.Log("You bit: " + enemyHit.name);
         //         enemyHit.GetComponent<Enemy>().getHit(baseDamage);
         //     }
-            Debug.Log("You pushed the bite button");
         }
     }
     
