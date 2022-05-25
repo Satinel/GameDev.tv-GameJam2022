@@ -37,14 +37,6 @@ public class PlayerAttacks : MonoBehaviour
         {
             animator.SetTrigger("swiping");
             //TODO play a sound
-
-            // Collider[] enemiesHit = Physics.OverlapSphere(swipeAOE.position, swipeRange, enemyLayer);
-            
-            // foreach (Collider enemyHit in enemiesHit)
-            // {
-            //     Debug.Log("You swiped: " + enemyHit.name);
-            //     enemyHit.GetComponent<Enemy>().getHit(baseDamage);
-            // }
         }
     }
 
@@ -58,7 +50,7 @@ public class PlayerAttacks : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire2"))
         {
-        //     animator.SetTrigger("biting");
+            animator.SetTrigger("biting");
             
         //     Collider[] enemiesHit = Physics.OverlapSphere(swipeAOE.position, swipeRange, enemyLayer);
             
