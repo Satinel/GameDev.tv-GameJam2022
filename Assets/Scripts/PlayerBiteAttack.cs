@@ -30,8 +30,7 @@ public class PlayerBiteAttack : MonoBehaviour
 
         if (other.gameObject.tag == "Food")
         {
-            //TODO make a script for foods to get eaten
-            //other.GetComponent<Food>().getAte(damage);
+            other.GetComponent<Food>().getAte(damage);
             Debug.Log("I ate " + other.gameObject.name);
             playerHealth.IncreaseHealth();
         }

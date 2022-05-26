@@ -8,13 +8,22 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] float speed = 0.5f;
     [SerializeField] float aggroRange = 15;
     [SerializeField] float attackRange = 1;
-    // [SerializeField] float deaggroRange = 25;
+    Enemy livingVersion;
+    Food deadVersion;
+    float startingYPosition;
     float distanceToPlayer = Mathf.Infinity;
     Animator animator;
+    Rigidbody rboi;
+    
 
     void Start()
     {
+        startingYPosition = transform.position.y;
         animator = GetComponent<Animator>();
+        livingVersion = GetComponentInChildren<Enemy>();
+        deadVersion = GetComponentInChildren<Food>();
+        deadVersion.gameObject.SetActive(false);
+        rboi = GetComponent<Rigidbody>();
     }
 
     void Aggro()
@@ -33,11 +42,7 @@ public class EnemyBehaviour : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, 
                                                     playerTarget.position, speed * Time.deltaTime);
             transform.position = new Vector3(transform.position.x,
-                                                    2.5f, transform.position.z);
-            // transform.(playerTarget.position.x,
-            //                     0f, 
-            //                     playerTarget.position.z);
-
+                                            startingYPosition, transform.position.z);
         }
         else
         {
@@ -46,9 +51,41 @@ public class EnemyBehaviour : MonoBehaviour
         }
     }
 
+    public void BecomeFood()
+    {
+        deadVersion.gameObject.SetActive(true);
+        transform.position = new Vector3(transform.position.x,
+                                        startingYPosition, transform.position.z);
+        transform.rotation = new Quaternion(0, transform.rotation.y, 0, 0);
+    }
+
+    public void Respawn()
+    {
+        livingVersion.gameObject.SetActive(true);
+    }
+
     void Update()
     {
-        Aggro();
+
+        if (livingVersion.gameObject.activeInHierarchy)
+        {
+            Aggro();
+        }
+        if (!livingVersion.gameObject.activeInHierarchy)
+        {
+            animator.SetBool("inRange", false);
+            animator.SetBool("isAggro", false);
+        }
+    }
+    
+    void FixedUpdate()
+    {
+        if (deadVersion.gameObject.activeInHierarchy)
+        {
+            rboi.velocity = Vector3.zero;
+            rboi.angularVelocity = Vector3.zero;
+        }
+        
     }
 
 }

@@ -4,11 +4,28 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] float hitPoints = 50;
+    [SerializeField] int maxHitpoints = 50;
+    [SerializeField] int hitPoints;
+    Vector3 defaultPosition;
+    Quaternion defaultRotation;
+    EnemyBehaviour enemyBehaviour;
+
+    void Awake()
+    {
+        defaultPosition = transform.parent.localPosition;
+        defaultRotation = transform.parent.localRotation;
+    }
 
     void Start()
     {
-        
+        enemyBehaviour = GetComponentInParent<EnemyBehaviour>();
+    }
+
+    void OnEnable()
+    {
+        transform.parent.localPosition = defaultPosition;
+        transform.parent.localRotation = defaultRotation;
+        hitPoints = maxHitpoints;
     }
 
     public void getHit(int damage)
@@ -16,6 +33,7 @@ public class Enemy : MonoBehaviour
         hitPoints -= damage;
         if(hitPoints <= 0)
         {
+            enemyBehaviour.BecomeFood();
             gameObject.SetActive(false);
         }
     }

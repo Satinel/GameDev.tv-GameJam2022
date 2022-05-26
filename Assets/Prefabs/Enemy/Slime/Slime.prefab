@@ -148,7 +148,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 252ca3228a32e3445b6d394924720ba9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -168,9 +168,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTarget: {fileID: 0}
-  speed: 1.25
+  speed: 2
   aggroRange: 20
   attackRange: 5
+  deadVersion: {fileID: 0}
 --- !u!1 &1320414688456539515
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,7 +305,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7202420637334175651}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 2.5
   m_Height: 10
@@ -322,7 +323,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bea1cd4b9e5399b46867c3ba0ac451d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 50
+  maxHitpoints: 50
+  hitPoints: 0
 --- !u!1 &7899727491617782647
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,13 +337,14 @@ GameObject:
   - component: {fileID: 6963593303235439069}
   - component: {fileID: 5931412108747527762}
   - component: {fileID: 2143291381637772222}
+  - component: {fileID: 2132144147394763375}
   m_Layer: 0
   m_Name: SlimeDead
   m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3958400790296963434
 Transform:
   m_ObjectHideFlags: 0
@@ -350,7 +353,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7899727491617782647}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2, z: 0}
+  m_LocalPosition: {x: 0, y: -2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5148,11 +5151,25 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7899727491617782647}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 5, y: 5, z: 5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2132144147394763375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7899727491617782647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45c366ab553f9ef4ab9b6b74310164a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxFoodPoints: 3
+  foodPoints: 0
 --- !u!1001 &1286658269561270690
 PrefabInstance:
   m_ObjectHideFlags: 0
