@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     Vector3 defaultPosition;
     Quaternion defaultRotation;
     EnemyBehaviour enemyBehaviour;
+    Animator animator;
 
     void Awake()
     {
@@ -19,6 +20,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         enemyBehaviour = GetComponentInParent<EnemyBehaviour>();
+        animator = GetComponentInParent<Animator>();
     }
 
     void OnEnable()
@@ -31,6 +33,8 @@ public class Enemy : MonoBehaviour
     public void getHit(int damage)
     {
         hitPoints -= damage;
+        animator.SetTrigger("tookDamage");
+        //TODO Play a sound
         if(hitPoints <= 0)
         {
             enemyBehaviour.BecomeFood();
