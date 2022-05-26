@@ -179,6 +179,18 @@ PrefabInstance:
       value: Spider
       objectReference: {fileID: 0}
     - target: {fileID: 5355378122760958749, guid: e5c61acf6e963c64baf4b477bd0e55e9, type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355378122760958749, guid: e5c61acf6e963c64baf4b477bd0e55e9, type: 3}
+      propertyPath: aggroRange
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355378122760958749, guid: e5c61acf6e963c64baf4b477bd0e55e9, type: 3}
+      propertyPath: attackRange
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355378122760958749, guid: e5c61acf6e963c64baf4b477bd0e55e9, type: 3}
       propertyPath: playerTarget
       value: 
       objectReference: {fileID: 1786397736}
@@ -743,6 +755,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d07d0f71b1f32eb4889da1ab639bbd35, type: 3}
+--- !u!1 &1702910459 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4283329851437944791, guid: e5c61acf6e963c64baf4b477bd0e55e9, type: 3}
+  m_PrefabInstance: {fileID: 170256929}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1702910463
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702910459}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7a34945c2beb0b84abb15c09365f88c8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &1724033180 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6041116516540795314, guid: d07d0f71b1f32eb4889da1ab639bbd35, type: 3}

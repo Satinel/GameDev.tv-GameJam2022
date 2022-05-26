@@ -1203,6 +1203,7 @@ GameObject:
   - component: {fileID: 1560145235659823272}
   - component: {fileID: 3125862708677884200}
   - component: {fileID: 5355378122760958749}
+  - component: {fileID: 8226167759865412886}
   m_Layer: 0
   m_Name: Spider
   m_TagString: Untagged
@@ -1259,6 +1260,26 @@ MonoBehaviour:
   speed: 0.5
   aggroRange: 15
   attackRange: 1
+--- !u!95 &8226167759865412886
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4283329851437944791}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7a34945c2beb0b84abb15c09365f88c8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4431925597845741836
 GameObject:
   m_ObjectHideFlags: 0
@@ -6288,7 +6309,6 @@ GameObject:
   - component: {fileID: 5009921775871782457}
   - component: {fileID: 6288386420736885423}
   - component: {fileID: 7695716591229981158}
-  - component: {fileID: 170256931}
   m_Layer: 0
   m_Name: SpiderAlive
   m_TagString: Enemy
@@ -6349,26 +6369,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHitpoints: 50
   hitPoints: 50
---- !u!95 &170256931
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6285131928927201009}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7a34945c2beb0b84abb15c09365f88c8, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6434073040601964574
 GameObject:
   m_ObjectHideFlags: 0
