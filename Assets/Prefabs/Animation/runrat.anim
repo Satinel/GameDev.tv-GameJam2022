@@ -5167,7 +5167,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: tail/tailbase
+    path: tail/tailmiddle
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -5177,7 +5177,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: tail/tailbase
+    path: tail/tailmiddle
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -5187,7 +5187,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: tail/tailbase
+    path: tail/tailmiddle
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -5197,7 +5197,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: tail/tailmiddle
+    path: tail/tailbase
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -5207,7 +5207,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: tail/tailmiddle
+    path: tail/tailbase
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -5217,7 +5217,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: tail/tailmiddle
+    path: tail/tailbase
     classID: 4
     script: {fileID: 0}
   - curve:

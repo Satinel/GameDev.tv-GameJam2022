@@ -31,7 +31,7 @@ public class EnemyBehaviour : MonoBehaviour
         distanceToPlayer = Vector3.Distance(playerTarget.position, transform.position);
         if (distanceToPlayer <= attackRange)
         {
-            animator.SetBool("isAggro", false);
+            // animator.SetBool("isAggro", false);
             animator.SetBool("inRange", true);
         }
         else if (distanceToPlayer <= aggroRange)
