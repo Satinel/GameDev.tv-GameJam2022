@@ -16,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] Camera mainCamera;
     Animator animator;
     bool isSquished = false;
+    bool isInvincible;
 
 
     void Start()
@@ -42,6 +43,7 @@ public class PlayerHealth : MonoBehaviour
         animator.SetTrigger("tookDamage");
         //TODO Move player back (if it doesn't mess everything up)
         //TODO Play a sound
+        // StartCoroutine("iFrames");
         if(hitPoints <= 0)
         {
             Debug.Log("You Died");
@@ -49,6 +51,14 @@ public class PlayerHealth : MonoBehaviour
             //BecomeGhost();
         }
     }
+
+    // IEnumerator iFrames()
+    // {
+    //     isInvincible = true;
+    //     //TODO actually make iframes coroutine somehow
+    //     isInvincible = false;
+    //     return null;
+    // }
 
     public void GainFood(int foodValue)
     {
@@ -62,6 +72,8 @@ public class PlayerHealth : MonoBehaviour
             currentSize++;
             stomachSize += currentSize * requirementIncrease;
             SendMessageUpwards("ReclampRange", SendMessageOptions.RequireReceiver);
+            maxHealth++;
+            hitPoints++;
             transform.localScale *= 2;
             mainCamera.transform.localPosition *= 2; //mainCamera.transform.position * 2;
         }
