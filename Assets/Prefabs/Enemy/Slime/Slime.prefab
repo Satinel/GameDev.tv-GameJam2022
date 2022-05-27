@@ -9950,6 +9950,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxFoodPoints: 3
   foodPoints: 0
+  foodValue: 1
 --- !u!1001 &1286658269561270690
 PrefabInstance:
   m_ObjectHideFlags: 0

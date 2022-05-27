@@ -8,7 +8,11 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] int hitPoints;
     [SerializeField] int stomachLevel;
     [SerializeField] int stomachSize = 10;
-    int currentSize;
+    [SerializeField] int currentSize = 1;
+    [SerializeField] int requirementIncrease = 5;
+    
+    //TODO make player health/level/size/etc. display in playerUI
+    // [SerializeField] Canvas playerUI;
     Animator animator;
     bool isSquished = false;
 
@@ -17,7 +21,6 @@ public class PlayerHealth : MonoBehaviour
     {
         hitPoints = maxHealth;
         stomachLevel = 0;
-        currentSize = 0;
         animator = GetComponent<Animator>();
     }
     public void IncreaseHealth()
@@ -48,18 +51,21 @@ public class PlayerHealth : MonoBehaviour
     public void GainFood(int foodValue)
     {
         stomachLevel += foodValue;
-        if (stomachLevel >= stomachSize)
-        {
-            IncreaseSize();
-        }
     }
 
     void IncreaseSize()
     {
-        //TODO increase player model's scale by *2
-        //TODO increase stomachSize
-        currentSize++;
-        Debug.Log("IncreaseSize placeholder Text!");
+        if (currentSize < 5)
+        {
+            currentSize++;
+            stomachSize += currentSize * requirementIncrease;
+            transform.localScale *= 2;
+        }
+    }
+
+    public int GetCurrentSize()
+    {
+        return currentSize;
     }
     
     public void SquishThatRat()
@@ -88,6 +94,9 @@ public class PlayerHealth : MonoBehaviour
     
     void Update()
     {
-        
+        if (stomachLevel >= stomachSize && !isSquished)
+        {
+            IncreaseSize();
+        }
     }
 }
