@@ -6,8 +6,20 @@ public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] int maxHealth = 3;
     [SerializeField] int hitPoints;
+    [SerializeField] int stomachLevel;
+    [SerializeField] int stomachSize = 10;
+    int currentSize;
+    Animator animator;
     bool isSquished = false;
 
+
+    void Start()
+    {
+        hitPoints = maxHealth;
+        stomachLevel = 0;
+        currentSize = 0;
+        animator = GetComponent<Animator>();
+    }
     public void IncreaseHealth()
     {
         if (hitPoints < maxHealth)
@@ -23,7 +35,7 @@ public class PlayerHealth : MonoBehaviour
             return;
         }
         hitPoints -= damage;
-        //animator.SetTrigger("tookDamage"); TODO make a damage animation for player
+        animator.SetTrigger("tookDamage");// TODO make a damage animation for player
         //TODO Play a sound
         if(hitPoints <= 0)
         {
@@ -33,7 +45,22 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    //TODO IncreaseSize()
+    public void GainFood(int foodValue)
+    {
+        stomachLevel += foodValue;
+        if (stomachLevel >= stomachSize)
+        {
+            IncreaseSize();
+        }
+    }
+
+    void IncreaseSize()
+    {
+        //TODO increase player model's scale by *2
+        //TODO increase stomachSize
+        currentSize++;
+        Debug.Log("IncreaseSize placeholder Text!");
+    }
     
     public void SquishThatRat()
     {
@@ -57,10 +84,6 @@ public class PlayerHealth : MonoBehaviour
         isSquished = false;
     }
     
-    void Start()
-    {
-        hitPoints = maxHealth;
-    }
 
     
     void Update()

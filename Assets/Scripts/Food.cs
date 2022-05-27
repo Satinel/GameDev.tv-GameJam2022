@@ -6,6 +6,7 @@ public class Food : MonoBehaviour
 {
     [SerializeField] int maxFoodPoints = 3;
     [SerializeField] int foodPoints;
+    [SerializeField] int foodValue = 1;
     EnemyBehaviour enemyBehaviour;
 
     void Start()
@@ -18,7 +19,7 @@ public class Food : MonoBehaviour
         foodPoints = maxFoodPoints;
     }
 
-    public void getAte(int damage)
+    public int getAte(int damage)
     {
         foodPoints -= damage;
         if(foodPoints <= 0)
@@ -26,5 +27,6 @@ public class Food : MonoBehaviour
             enemyBehaviour.Respawn();
             gameObject.SetActive(false);
         }
+        return foodValue;
     }
 }
