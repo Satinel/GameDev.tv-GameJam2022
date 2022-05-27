@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour
     
     //TODO make player health/level/size/etc. display in playerUI
     // [SerializeField] Canvas playerUI;
+    [SerializeField] Camera mainCamera;
     Animator animator;
     bool isSquished = false;
 
@@ -38,7 +39,8 @@ public class PlayerHealth : MonoBehaviour
             return;
         }
         hitPoints -= damage;
-        animator.SetTrigger("tookDamage");// TODO make a damage animation for player
+        animator.SetTrigger("tookDamage");
+        //TODO Move player back (if it doesn't mess everything up)
         //TODO Play a sound
         if(hitPoints <= 0)
         {
@@ -59,7 +61,9 @@ public class PlayerHealth : MonoBehaviour
         {
             currentSize++;
             stomachSize += currentSize * requirementIncrease;
+            SendMessageUpwards("ReclampRange", SendMessageOptions.RequireReceiver);
             transform.localScale *= 2;
+            mainCamera.transform.localPosition *= 2; //mainCamera.transform.position * 2;
         }
     }
 
@@ -95,6 +99,10 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
         if (stomachLevel >= stomachSize && !isSquished)
+        {
+            IncreaseSize();
+        }
+        if (Input.GetKeyDown(KeyCode.L))
         {
             IncreaseSize();
         }

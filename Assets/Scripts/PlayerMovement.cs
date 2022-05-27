@@ -6,10 +6,54 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] int moveSpeed = 10;
     // [SerializeField] float rotationSpeed = 0.15f;
-    [SerializeField] float xRange = 25;
-    [SerializeField] float zRange = 10;
+    [SerializeField] float xRange = 26.7f;
+    [SerializeField] float zRange = 15.25f;
     float xThrow;
     float zThrow;
+
+    [SerializeField] PlayerHealth playerHealth;
+
+    // void Start()
+    // {
+    //     playerHealth = GetComponentInChildren<PlayerHealth>();
+    // }
+
+    void OnEnable()
+    {
+        playerHealth = GetComponentInChildren<PlayerHealth>();
+        ReclampRange();
+    }
+
+    void ReclampRange()
+    {
+        int size = playerHealth.GetCurrentSize();
+        if (size == 1)
+        {
+            xRange = 26.7f;
+            zRange = 15.25f;
+        }
+        if (size == 2)
+        {
+            xRange = 26.4f;
+            zRange = 14.9f;
+        }
+        if (size == 3)
+        {
+            xRange = 25.75f;
+            zRange = 14.3f;
+        }
+        if (size == 4)
+        {
+            xRange = 25.5f;
+            zRange = 13.25f;
+        }
+        if (size == 5)
+        {
+            xRange = 21.8f;
+            zRange = 10.25f;
+        }
+        else return;
+    }
 
     void ProcessTranslation()
     {

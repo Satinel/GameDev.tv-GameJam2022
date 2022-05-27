@@ -85,7 +85,11 @@ public class EnemyBehaviour : MonoBehaviour
             rboi.velocity = Vector3.zero;
             rboi.angularVelocity = Vector3.zero;
         }
-        
+        if (distanceToPlayer > aggroRange)
+        {
+            rboi.velocity = Vector3.zero;
+            rboi.angularVelocity = Vector3.zero;
+        }
     }
 
 }
