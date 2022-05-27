@@ -39,26 +39,30 @@ public class PlayerHealth : MonoBehaviour
         {
             return;
         }
-        hitPoints -= damage;
-        animator.SetTrigger("tookDamage");
-        //TODO Move player back (if it doesn't mess everything up)
-        //TODO Play a sound
-        // StartCoroutine("iFrames");
-        if(hitPoints <= 0)
+        if (isInvincible)
         {
+            return;
+        }
+        hitPoints -= damage;
+        if (hitPoints <= 0)
+        {
+            //TODO PlayerDeath method
             Debug.Log("You Died");
             //TODO make a life depletion method
             //BecomeGhost();
+            return;
         }
+        animator.SetTrigger("tookDamage");
+        //TODO Play a sound
+        isInvincible = true;
+        Invoke("StopInvincibility", 1.5f);
     }
 
-    // IEnumerator iFrames()
-    // {
-    //     isInvincible = true;
-    //     //TODO actually make iframes coroutine somehow
-    //     isInvincible = false;
-    //     return null;
-    // }
+    void StopInvincibility()
+    {
+        isInvincible = false;
+    }
+
 
     public void GainFood(int foodValue)
     {

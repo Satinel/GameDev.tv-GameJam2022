@@ -9074,14 +9074,14 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: ToggleMovement
+    functionName: MovementOff
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 1.05
-    functionName: ToggleMovement
+    functionName: MovementOn
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

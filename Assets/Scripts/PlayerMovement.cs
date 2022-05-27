@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     float xThrow;
     float zThrow;
 
+    public bool isAttacking;
+
     [SerializeField] PlayerHealth playerHealth;
 
     // void Start()
@@ -73,7 +75,10 @@ public class PlayerMovement : MonoBehaviour
     
     void Update()
     {
-        ProcessTranslation();
+        if (!isAttacking)
+        {
+            ProcessTranslation();
+        }
     }
 
 }

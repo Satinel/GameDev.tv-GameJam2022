@@ -21,14 +21,24 @@ public class PlayerAttacks : MonoBehaviour
 
     void ToggleMovement()
     {
-        if (playerMovement.enabled)
+        if (playerMovement.isAttacking)
         {
-            playerMovement.enabled = false;
+            playerMovement.isAttacking = false;
         }
         else
         {
-            playerMovement.enabled = true;
+            playerMovement.isAttacking = true;
         }
+    }
+
+    void MovementOn()
+    {
+        playerMovement.isAttacking = false;
+    }
+
+    void MovementOff()
+    {
+        playerMovement.isAttacking = true;
     }
 
     void Swipe()
