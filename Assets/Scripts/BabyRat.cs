@@ -32,11 +32,8 @@ public class BabyRat : MonoBehaviour
     void RandomMovement()
     {
         transform.Rotate(0, UnityEngine.Random.Range(1, 359), 0);
-        int randomRange = UnityEngine.Random.Range(1, 5);
-        while (transform.position.z != randomRange)
-        {
-            transform.position += transform.forward * velocity * Time.deltaTime; 
-        }
+        //int randomRange = UnityEngine.Random.Range(1, 5);
+        transform.position += transform.forward * velocity * Time.deltaTime; 
         invoked = false;
     }
 }
