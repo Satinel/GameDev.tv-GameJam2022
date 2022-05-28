@@ -6,11 +6,12 @@ using UnityEngine;
 public class PlayerGhost : MonoBehaviour
 {
     [SerializeField] PlayerHealth playerHealth;
+    ParticleSystem wisps;
     // Material material;
 
     void Start()
     {
-
+        wisps = GetComponent<ParticleSystem>();
     }
     
     void OnTriggerEnter(Collider other)
@@ -18,6 +19,7 @@ public class PlayerGhost : MonoBehaviour
         if (other.gameObject.tag == "Host")
         {
             //TODO make particle effect play
+            wisps.Play(true);
             if (Input.GetButtonDown("Fire1"))
             {
                 // material = other.GetComponentInChildren<Renderer>().material;
@@ -34,7 +36,11 @@ public class PlayerGhost : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
+    void OnTriggerExit(Collider other)
+    {
+        wisps.Play(false);
+    }
+    
     void Update()
     {
         

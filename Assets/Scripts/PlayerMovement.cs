@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     void OnEnable()
     {
         playerHealth = GetComponentInChildren<PlayerHealth>();
-        // ReclampRange();
+        ReclampRange();
     }
 
     void ReclampRange()

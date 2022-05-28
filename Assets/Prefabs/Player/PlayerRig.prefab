@@ -31,6 +31,7 @@ Transform:
   m_Children:
   - {fileID: 5171902982968997249}
   - {fileID: 5171902981349567154}
+  - {fileID: 5053608952970098300}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -135,6 +136,83 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5171902982968997252}
   m_Enabled: 1
+--- !u!1001 &2218263282994308731
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5171902981647650777}
+    m_Modifications:
+    - target: {fileID: 6407175461472751617, guid: 44010bf72e73fde438c139c1f4d7ae95, type: 3}
+      propertyPath: m_Name
+      value: PlayerGhost
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407175461472751617, guid: 44010bf72e73fde438c139c1f4d7ae95, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407175461472751623, guid: 44010bf72e73fde438c139c1f4d7ae95, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407175461472751623, guid: 44010bf72e73fde438c139c1f4d7ae95, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407175461472751623, guid: 44010bf72e73fde438c139c1f4d7ae95, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407175461472751623, guid: 44010bf72e73fde438c139c1f4d7ae95, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407175461472751623, guid: 44010bf72e73fde438c139c1f4d7ae95, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407175461472751623, guid: 44010bf72e73fde438c139c1f4d7ae95, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407175461472751623, guid: 44010bf72e73fde438c139c1f4d7ae95, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407175461472751623, guid: 44010bf72e73fde438c139c1f4d7ae95, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407175461472751623, guid: 44010bf72e73fde438c139c1f4d7ae95, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407175461472751623, guid: 44010bf72e73fde438c139c1f4d7ae95, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407175461472751623, guid: 44010bf72e73fde438c139c1f4d7ae95, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 44010bf72e73fde438c139c1f4d7ae95, type: 3}
+--- !u!114 &5053608952970098299 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6407175461472751616, guid: 44010bf72e73fde438c139c1f4d7ae95, type: 3}
+  m_PrefabInstance: {fileID: 2218263282994308731}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e0f74994d8c45f479e3af87b28002cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &5053608952970098300 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6407175461472751623, guid: 44010bf72e73fde438c139c1f4d7ae95, type: 3}
+  m_PrefabInstance: {fileID: 2218263282994308731}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4432744080389784325
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -154,6 +232,10 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 5171902982968997254}
+    - target: {fileID: 6967055969339332487, guid: 604c02b5e6e5a4f488cc342d77679fff, type: 3}
+      propertyPath: playerGhost
+      value: 
+      objectReference: {fileID: 5053608952970098299}
     - target: {fileID: 7230422374887891864, guid: 604c02b5e6e5a4f488cc342d77679fff, type: 3}
       propertyPath: m_IsTrigger
       value: 1

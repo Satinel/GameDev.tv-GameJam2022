@@ -14,6 +14,7 @@ public class PlayerHealth : MonoBehaviour
     //TODO make player health/level/size/etc. display in playerUI
     // [SerializeField] Canvas playerUI;
     [SerializeField] Camera mainCamera;
+    [SerializeField] PlayerGhost playerGhost;
     Animator animator;
     bool isSquished = false;
     bool isInvincible;
@@ -21,11 +22,27 @@ public class PlayerHealth : MonoBehaviour
 
     void Start()
     {
+        hitPoints = maxHealth;
+        stomachLevel = 0;
         animator = GetComponent<Animator>();
     }
 
-    void OnEnable()
+    // void OnEnable()
+    // {
+    //     currentSize = 1;
+    //     maxHealth = 3;
+    //     hitPoints = maxHealth;
+    //     stomachSize = 10;
+    //     stomachLevel = 0;
+    //     transform.localScale = new Vector3(0.125f,0.125f,0.125f);
+    //     mainCamera.transform.localPosition = new Vector3 (0, 1.25f, -2.125f);
+    //     SendMessageUpwards("ReclampRange", SendMessageOptions.RequireReceiver);
+    // }
+
+    void OnDisable()
     {
+        animator.SetBool("isDead", false);
+        isInvincible = false;
         currentSize = 1;
         maxHealth = 3;
         hitPoints = maxHealth;
@@ -33,7 +50,7 @@ public class PlayerHealth : MonoBehaviour
         stomachLevel = 0;
         transform.localScale = new Vector3(0.125f,0.125f,0.125f);
         mainCamera.transform.localPosition = new Vector3 (0, 1.25f, -2.125f);
-        SendMessageUpwards("ReclampRange", SendMessageOptions.RequireReceiver);
+        SendMessageUpwards("ReclampRange", SendMessageOptions.DontRequireReceiver);
     }
 
     public void IncreaseHealth()
@@ -55,15 +72,18 @@ public class PlayerHealth : MonoBehaviour
             return;
         }
         hitPoints -= damage;
+        animator.SetTrigger("tookDamage");
         if (hitPoints <= 0)
         {
-            //TODO PlayerDeath method
+            animator.SetBool("isDead", true);
+            isInvincible = true;
             Debug.Log("You Died");
+
+            //TODO PlayerDeath method "You died etc. etc."
             //TODO make a life depletion method
-            //BecomeGhost();
+            Invoke("BecomeGhost", 2f);
             return;
         }
-        animator.SetTrigger("tookDamage");
         //TODO Play a sound
         isInvincible = true;
         Invoke("StopInvincibility", 1.5f);
@@ -72,6 +92,13 @@ public class PlayerHealth : MonoBehaviour
     void StopInvincibility()
     {
         isInvincible = false;
+    }
+
+    void BecomeGhost()
+    {
+        transform.parent.position = new Vector3(0, 300, 0);
+        playerGhost.gameObject.SetActive(true);
+        gameObject.SetActive(false);
     }
 
 
