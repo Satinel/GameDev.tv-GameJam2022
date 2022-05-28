@@ -1365,6 +1365,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 8e4ecc87dbb4f134a9f4bd79073cbfc1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bb69cf7824493814eb67278c03e4b30f, type: 2}
     - target: {fileID: 919132149155446097, guid: 8e4ecc87dbb4f134a9f4bd79073cbfc1, type: 3}
       propertyPath: m_Name
       value: rathole
@@ -1427,6 +1431,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 8e4ecc87dbb4f134a9f4bd79073cbfc1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bb69cf7824493814eb67278c03e4b30f, type: 2}
     - target: {fileID: 919132149155446097, guid: 8e4ecc87dbb4f134a9f4bd79073cbfc1, type: 3}
       propertyPath: m_Name
       value: rathole (3)
@@ -1445,6 +1453,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6041116516540795314}
     m_Modifications:
+    - target: {fileID: 492446074646999296, guid: b5d32691780560245a8878f583f9074c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cd6e89de027010f46b1e62482ca4b605, type: 2}
     - target: {fileID: 2244780968665656542, guid: b5d32691780560245a8878f583f9074c, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -1515,6 +1527,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6041116516540795314}
     m_Modifications:
+    - target: {fileID: 492446074646999296, guid: b5d32691780560245a8878f583f9074c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cd6e89de027010f46b1e62482ca4b605, type: 2}
     - target: {fileID: 2244780968665656542, guid: b5d32691780560245a8878f583f9074c, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -1585,6 +1601,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6041116516540795314}
     m_Modifications:
+    - target: {fileID: 492446074646999296, guid: b5d32691780560245a8878f583f9074c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cd6e89de027010f46b1e62482ca4b605, type: 2}
     - target: {fileID: 2244780968665656542, guid: b5d32691780560245a8878f583f9074c, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -1703,6 +1723,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 8e4ecc87dbb4f134a9f4bd79073cbfc1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bb69cf7824493814eb67278c03e4b30f, type: 2}
     - target: {fileID: 919132149155446097, guid: 8e4ecc87dbb4f134a9f4bd79073cbfc1, type: 3}
       propertyPath: m_Name
       value: rathole (2)
@@ -1721,6 +1745,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6041116516540795314}
     m_Modifications:
+    - target: {fileID: 492446074646999296, guid: b5d32691780560245a8878f583f9074c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cd6e89de027010f46b1e62482ca4b605, type: 2}
     - target: {fileID: 2244780968665656542, guid: b5d32691780560245a8878f583f9074c, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -1839,6 +1867,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 8e4ecc87dbb4f134a9f4bd79073cbfc1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bb69cf7824493814eb67278c03e4b30f, type: 2}
     - target: {fileID: 919132149155446097, guid: 8e4ecc87dbb4f134a9f4bd79073cbfc1, type: 3}
       propertyPath: m_Name
       value: rathole (1)
