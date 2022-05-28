@@ -50,24 +50,11 @@ public class PlayerAttacks : MonoBehaviour
         }
     }
 
-    // void OnDrawGizmos()
-    // {
-        // if (biteAOE == null) return;
-    //     Gizmos.DrawWireSphere(biteAOE.position, biteRange);
-    // }
-
     void Bite()
     {
         if (Input.GetButtonDown("Fire2"))
         {
             animator.SetTrigger("biting");
-            
-        //     Collider[] enemiesHit = Physics.OverlapSphere(swipeAOE.position, swipeRange, enemyLayer);
-        //     foreach (Collider enemyHit in enemiesHit)
-        //     {
-        //         Debug.Log("You bit: " + enemyHit.name);
-        //         enemyHit.GetComponent<Enemy>().getHit(baseDamage);
-        //     }
         }
     }
     

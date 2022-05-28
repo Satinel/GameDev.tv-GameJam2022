@@ -49,6 +49,7 @@ MonoBehaviour:
   moveSpeed: 15
   xRange: 25.5
   zRange: 13.25
+  isAttacking: 0
   playerHealth: {fileID: 0}
 --- !u!1 &5171902982968997252
 GameObject:
@@ -143,6 +144,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3314152731477261712, guid: 604c02b5e6e5a4f488cc342d77679fff, type: 3}
       propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4234159356836264699, guid: 604c02b5e6e5a4f488cc342d77679fff, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6967055969339332487, guid: 604c02b5e6e5a4f488cc342d77679fff, type: 3}

@@ -14,7 +14,6 @@ public class RoomTransition : MonoBehaviour
         {
             dungeon.Translate(horizontalDirection,0,verticalDirection);
             Transform playerParent = other.transform.parent;
-            Debug.Log(playerParent.name);
             playerParent.Translate(horizontalDirection,0,verticalDirection);
         }
     }
