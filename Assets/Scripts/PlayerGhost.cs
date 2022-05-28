@@ -25,13 +25,12 @@ public class PlayerGhost : MonoBehaviour
             wisps.Play(true);
             canPossess = true;
         }
+        if (other.gameObject.tag == "Exit")
+        {
+            //TODO message to player than you need to possess a rat first
+        }
     }
 
-    void OnTriggerExit(Collider other)
-    {
-        canPossess = false;
-        wisps.Play(false);
-    }
     
     void PossessHost()
     {

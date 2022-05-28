@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class PlayerHealth : MonoBehaviour
     
     //TODO make player health/level/size/etc. display in playerUI
     [SerializeField] Transform dungeonPosition;
-    [SerializeField] Canvas playerUI;
+    [SerializeField] GameObject stomachUI;
     [SerializeField] Camera mainCamera;
     [SerializeField] PlayerGhost playerGhost;
     [SerializeField] GameObject heart0;
@@ -24,6 +25,10 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] GameObject heart5;
     [SerializeField] GameObject heart6;
     Animator animator;
+    Slider stomachSlider;
+    RectTransform stomachBar;
+    Vector3 sBarDefaultPos;
+    Vector2 sBarDefaultSize;
     bool isSquished = false;
     bool isInvincible;
     
@@ -31,8 +36,14 @@ public class PlayerHealth : MonoBehaviour
 
     void Start()
     {
-        hitPoints = maxHealth;
         stomachLevel = 0;
+        stomachSlider = stomachUI.GetComponent<Slider>();
+        stomachBar = stomachUI.GetComponent<RectTransform>();
+        sBarDefaultPos = stomachBar.position;
+        sBarDefaultSize = stomachBar.sizeDelta;
+        stomachSlider.value = stomachLevel;
+        stomachSlider.maxValue = stomachSize;
+        hitPoints = maxHealth;
         animator = GetComponent<Animator>();
     }
 
@@ -57,6 +68,9 @@ public class PlayerHealth : MonoBehaviour
         hitPoints = maxHealth;
         stomachSize = 10;
         stomachLevel = 0;
+        stomachBar.position = sBarDefaultPos;
+        stomachBar.sizeDelta = sBarDefaultSize;
+        FoodDisplay();
         transform.localScale = new Vector3(0.125f,0.125f,0.125f);
         mainCamera.transform.localPosition = new Vector3 (0, 1.25f, -2.125f);
         SendMessageUpwards("ReclampRange", SendMessageOptions.DontRequireReceiver);
@@ -128,6 +142,8 @@ public class PlayerHealth : MonoBehaviour
             hitPoints++;
             transform.localScale *= 2;
             mainCamera.transform.localPosition *= 2; //mainCamera.transform.position * 2;
+            stomachBar.position += new Vector3 (52.5f, 0, 0);
+            stomachBar.sizeDelta += new Vector2 (105f, 0);
         }
     }
 
@@ -220,6 +236,12 @@ public class PlayerHealth : MonoBehaviour
         }
     }
     
+    void FoodDisplay()
+    {
+        stomachSlider.value = stomachLevel;
+        stomachSlider.maxValue = stomachSize;
+    }
+
     void Update()
     {
         if (stomachLevel >= stomachSize && !isSquished)
@@ -231,5 +253,9 @@ public class PlayerHealth : MonoBehaviour
             IncreaseSize();
         }
         HealthDisplay();
+        if (hitPoints >= 1)
+        {
+            FoodDisplay();
+        }
     }
 }
