@@ -143,6 +143,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5171902981647650777}
     m_Modifications:
+    - target: {fileID: 6407175461472751616, guid: 44010bf72e73fde438c139c1f4d7ae95, type: 3}
+      propertyPath: playerHealth
+      value: 
+      objectReference: {fileID: 6713654544362181762}
     - target: {fileID: 6407175461472751617, guid: 44010bf72e73fde438c139c1f4d7ae95, type: 3}
       propertyPath: m_Name
       value: PlayerGhost
@@ -307,3 +311,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8809620440260979127, guid: 604c02b5e6e5a4f488cc342d77679fff, type: 3}
   m_PrefabInstance: {fileID: 4432744080389784325}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6713654544362181762 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6967055969339332487, guid: 604c02b5e6e5a4f488cc342d77679fff, type: 3}
+  m_PrefabInstance: {fileID: 4432744080389784325}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05cae1b152fb80946ab762b9b1a5a47a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -5974,7 +5974,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f25b2aaa32225f4f9ec90c43c9b8e99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mat: {fileID: 0}
 --- !u!95 &133559678
 Animator:
   serializedVersion: 4
@@ -7055,7 +7054,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f25b2aaa32225f4f9ec90c43c9b8e99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mat: {fileID: 0}
 --- !u!95 &305910351
 Animator:
   serializedVersion: 4
@@ -13528,7 +13526,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f25b2aaa32225f4f9ec90c43c9b8e99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mat: {fileID: 0}
 --- !u!95 &530646058
 Animator:
   serializedVersion: 4
@@ -20971,7 +20968,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f25b2aaa32225f4f9ec90c43c9b8e99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mat: {fileID: 0}
 --- !u!95 &750637639
 Animator:
   serializedVersion: 4
@@ -21080,7 +21076,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f25b2aaa32225f4f9ec90c43c9b8e99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mat: {fileID: 0}
 --- !u!95 &792866668
 Animator:
   serializedVersion: 4
@@ -21804,7 +21799,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f25b2aaa32225f4f9ec90c43c9b8e99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mat: {fileID: 0}
 --- !u!95 &873107778
 Animator:
   serializedVersion: 4
@@ -34633,7 +34627,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f25b2aaa32225f4f9ec90c43c9b8e99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mat: {fileID: 0}
 --- !u!95 &1309335968
 Animator:
   serializedVersion: 4
@@ -49598,7 +49591,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f25b2aaa32225f4f9ec90c43c9b8e99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mat: {fileID: 0}
 --- !u!95 &1968508426
 Animator:
   serializedVersion: 4
@@ -56388,6 +56380,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5171902981647650782, guid: fbcb4437be62c9242bdb33d487bf4fa1, type: 3}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5171902981647650783, guid: fbcb4437be62c9242bdb33d487bf4fa1, type: 3}
       propertyPath: m_Name
       value: PlayerRig
@@ -56960,7 +56956,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5003302810088899279, guid: a3dcbaaed1b1e004297560c2f9cce3c5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.33
       objectReference: {fileID: 0}
     - target: {fileID: 5003302810088899279, guid: a3dcbaaed1b1e004297560c2f9cce3c5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -56968,7 +56964,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5003302810088899279, guid: a3dcbaaed1b1e004297560c2f9cce3c5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 7.92
       objectReference: {fileID: 0}
     - target: {fileID: 5003302810088899279, guid: a3dcbaaed1b1e004297560c2f9cce3c5, type: 3}
       propertyPath: m_LocalRotation.w

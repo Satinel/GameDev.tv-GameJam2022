@@ -6,6 +6,8 @@ using UnityEngine;
 public class PlayerGhost : MonoBehaviour
 {
     [SerializeField] PlayerHealth playerHealth;
+    bool canPossess;
+    GameObject host;
     ParticleSystem wisps;
     // Material material;
 
@@ -18,31 +20,34 @@ public class PlayerGhost : MonoBehaviour
     {
         if (other.gameObject.tag == "Host")
         {
-            //TODO make particle effect play
+            // material = other.GetComponentInChildren<Renderer>().material;
+            host = other.gameObject;
             wisps.Play(true);
-            if (Input.GetButtonDown("Fire1"))
-            {
-                // material = other.GetComponentInChildren<Renderer>().material;
-                other.GetComponent<BabyRat>().BecomeHost();
-                PossessHost();
-            }
+            canPossess = true;
         }
-    }
-
-    void PossessHost()
-    {
-        playerHealth.gameObject.SetActive(true);
-        // playerHealth.GetComponent<Renderer>().material = material;
-        gameObject.SetActive(false);
     }
 
     void OnTriggerExit(Collider other)
     {
+        canPossess = false;
         wisps.Play(false);
     }
     
+    void PossessHost()
+    {
+        Destroy(host);
+        playerHealth.gameObject.SetActive(true);
+        // playerHealth.GetComponent<Renderer>().material = material;
+        gameObject.SetActive(false);
+    }
     void Update()
     {
-        
+        if (Input.GetButtonDown("Fire1"))
+        {
+            if (canPossess)
+            {
+                PossessHost();
+            }
+        }
     }
 }

@@ -27,17 +27,17 @@ public class PlayerHealth : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    // void OnEnable()
-    // {
+    void OnEnable()
+    {
     //     currentSize = 1;
     //     maxHealth = 3;
     //     hitPoints = maxHealth;
     //     stomachSize = 10;
     //     stomachLevel = 0;
-    //     transform.localScale = new Vector3(0.125f,0.125f,0.125f);
+        transform.localScale = new Vector3(0.125f,0.125f,0.125f);
     //     mainCamera.transform.localPosition = new Vector3 (0, 1.25f, -2.125f);
     //     SendMessageUpwards("ReclampRange", SendMessageOptions.RequireReceiver);
-    // }
+    }
 
     void OnDisable()
     {
