@@ -7,13 +7,13 @@ public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] int maxHealth = 3;
     [SerializeField] int hitPoints;
-    [SerializeField] int stomachLevel;
-    [SerializeField] int stomachSize = 10;
-    [SerializeField] int currentSize = 1;
-    [SerializeField] int requirementIncrease = 5;
+    [SerializeField] int stomachSize = 10; // How much food it takes to fill your stomach
+    [SerializeField] int stomachLevel; // How much food has been eaten
+    [SerializeField] int requirementIncrease = 5; // How much the next stomach size increases by
+    [SerializeField] int currentSize = 1; // The player's size level
     
     //TODO make player health/level/size/etc. display in playerUI
-    [SerializeField] Transform dungeonPosition;
+    [SerializeField] Transform dungeonPosition; // The main playing area
     [SerializeField] GameObject stomachUI;
     [SerializeField] Camera mainCamera;
     [SerializeField] PlayerGhost playerGhost;
@@ -61,16 +61,17 @@ public class PlayerHealth : MonoBehaviour
 
     void OnDisable()
     {
+        if (stomachBar == null) { return; }
         animator.SetBool("isDead", false);
         isInvincible = false;
         currentSize = 1;
         maxHealth = 3;
         hitPoints = maxHealth;
         stomachSize = 10;
-        stomachLevel = 0;
+        stomachLevel = 0;        
         stomachBar.position = sBarDefaultPos;
         stomachBar.sizeDelta = sBarDefaultSize;
-        FoodDisplay();
+        FoodDisplay();        
         transform.localScale = new Vector3(0.125f,0.125f,0.125f);
         mainCamera.transform.localPosition = new Vector3 (0, 1.25f, -2.125f);
         SendMessageUpwards("ReclampRange", SendMessageOptions.DontRequireReceiver);
@@ -142,8 +143,9 @@ public class PlayerHealth : MonoBehaviour
             hitPoints++;
             transform.localScale *= 2;
             mainCamera.transform.localPosition *= 2; //mainCamera.transform.position * 2;
-            stomachBar.position += new Vector3 (52.5f, 0, 0);
+            stomachBar.localPosition += new Vector3 (52.5f, 0, 0);
             stomachBar.sizeDelta += new Vector2 (105f, 0);
+            stomachLevel = 0;
         }
     }
 
