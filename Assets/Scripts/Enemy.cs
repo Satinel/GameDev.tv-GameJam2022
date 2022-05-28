@@ -6,6 +6,8 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] int maxHitpoints = 50;
     [SerializeField] int hitPoints;
+    // [SerializeField] AudioClip hurtSFX;
+    // AudioSource audioSource;
     Vector3 defaultPosition;
     Quaternion defaultRotation;
     EnemyBehaviour enemyBehaviour;
@@ -21,6 +23,7 @@ public class Enemy : MonoBehaviour
     {
         enemyBehaviour = GetComponentInParent<EnemyBehaviour>();
         animator = GetComponentInParent<Animator>();
+        // audioSource = GetComponentInParent<AudioSource>();
     }
 
     void OnEnable()
@@ -34,13 +37,23 @@ public class Enemy : MonoBehaviour
     {
         hitPoints -= damage;
         animator.SetTrigger("tookDamage");
-        //TODO Play a sound
+        // PlayHurtSound();
+        //TODO instantiate particle effect (meaning we probably don't need PlayHurtSound)
         if(hitPoints <= 0)
         {
             enemyBehaviour.BecomeFood();
             gameObject.SetActive(false);
         }
     }
+
+    // void PlayHurtSound()
+    // {
+    //     if (audioSource.isPlaying)
+    //     {
+    //         audioSource.Stop();
+    //     }
+    //     audioSource.PlayOneShot(hurtSFX);
+    // }
 
     void Update()
     {

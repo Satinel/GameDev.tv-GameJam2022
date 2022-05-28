@@ -8,6 +8,8 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] float speed = 0.5f;
     [SerializeField] float aggroRange = 15;
     [SerializeField] float attackRange = 1;
+    [SerializeField] AudioClip attackSFX;
+    AudioSource audioSource;
     Enemy livingVersion;
     Food deadVersion;
     float startingYPosition;
@@ -24,6 +26,7 @@ public class EnemyBehaviour : MonoBehaviour
         deadVersion = GetComponentInChildren<Food>();
         deadVersion.gameObject.SetActive(false);
         rboi = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Aggro()
@@ -62,6 +65,15 @@ public class EnemyBehaviour : MonoBehaviour
     public void Respawn()
     {
         livingVersion.gameObject.SetActive(true);
+    }
+
+    void PlayAttackSound()
+    {
+        if (audioSource.isPlaying)
+        {
+            audioSource.Stop();
+        }
+        audioSource.PlayOneShot(attackSFX);
     }
 
     void Update()
