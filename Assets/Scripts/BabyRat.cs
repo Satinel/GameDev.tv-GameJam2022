@@ -6,17 +6,17 @@ using UnityEngine;
 public class BabyRat : MonoBehaviour
 {
     bool invoked;
-    [SerializeField] Material material;
+    [SerializeField] Material mat;
 
     void Start()
     {
-        material = GetComponentInChildren<Renderer>().material;
+        mat = GetComponentInChildren<Renderer>().material;
     }
 
     public void BecomeHost()
     {
         //return material source somehow
-        Destroy(gameObject);
+        Destroy(gameObject, 0.1f);
     }
 
     void Update()

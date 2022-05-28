@@ -5,22 +5,21 @@ using UnityEngine;
 public class PlayerSwipeAttack : MonoBehaviour
 {
     int damage = 1;
-    int playerSize = 10;
+    int playerSize;
+    PlayerHealth playerHealth;
 
-    // void OnEnable()
-    // {
-    //     Transform currentSize = GetComponentInParent<Transform>();
-    //     playerSize = currentSize.localScale.z;
-    //     Debug.Log("player size: " + playerSize);
-    //     Debug.Log("current size: " + currentSize);
-    // }
+    void Start()
+    {
+        playerHealth = GetComponentInParent<PlayerHealth>();
+    }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Enemy")
         {
-            other.GetComponent<Enemy>().getHit(damage * playerSize);
-            Debug.Log("I hit " + other.gameObject.name + " for " + damage*playerSize);
+            int playerSize = playerHealth.GetCurrentSize();
+            other.GetComponent<Enemy>().getHit(damage * playerSize * 2);
+            Debug.Log("I hit " + other.gameObject.name + " for " + damage*playerSize*2);
         }
     }
 

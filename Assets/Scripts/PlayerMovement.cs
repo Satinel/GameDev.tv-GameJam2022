@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     void OnEnable()
     {
         playerHealth = GetComponentInChildren<PlayerHealth>();
-        ReclampRange();
+        // ReclampRange();
     }
 
     void ReclampRange()
@@ -53,11 +53,6 @@ public class PlayerMovement : MonoBehaviour
         {
             xRange = 21.8f;
             zRange = 10.25f;
-        }
-        else
-        {
-            xRange = 26.7f;
-            zRange = 15.25f;
         }
     }
 

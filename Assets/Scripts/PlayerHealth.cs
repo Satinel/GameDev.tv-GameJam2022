@@ -21,10 +21,21 @@ public class PlayerHealth : MonoBehaviour
 
     void Start()
     {
-        hitPoints = maxHealth;
-        stomachLevel = 0;
         animator = GetComponent<Animator>();
     }
+
+    void OnEnable()
+    {
+        currentSize = 1;
+        maxHealth = 3;
+        hitPoints = maxHealth;
+        stomachSize = 10;
+        stomachLevel = 0;
+        transform.localScale = new Vector3(0.125f,0.125f,0.125f);
+        mainCamera.transform.localPosition = new Vector3 (0, 1.25f, -2.125f);
+        SendMessageUpwards("ReclampRange", SendMessageOptions.RequireReceiver);
+    }
+
     public void IncreaseHealth()
     {
         if (hitPoints < maxHealth)
@@ -85,6 +96,7 @@ public class PlayerHealth : MonoBehaviour
 
     public int GetCurrentSize()
     {
+        Debug.Log(currentSize);
         return currentSize;
     }
     
