@@ -12,6 +12,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] int requirementIncrease = 5;
     
     //TODO make player health/level/size/etc. display in playerUI
+    [SerializeField] Transform dungeonPosition;
     [SerializeField] Canvas playerUI;
     [SerializeField] Camera mainCamera;
     [SerializeField] PlayerGhost playerGhost;
@@ -105,6 +106,7 @@ public class PlayerHealth : MonoBehaviour
     void BecomeGhost()
     {
         transform.parent.position = new Vector3(0, 300, 0);
+        dungeonPosition.position = new Vector3 (0,0,0);
         playerGhost.gameObject.SetActive(true);
         gameObject.SetActive(false);
     }
