@@ -33,26 +33,31 @@ public class PlayerMovement : MonoBehaviour
         {
             xRange = 26.7f;
             zRange = 15.25f;
+            moveSpeed = 5;
         }
         if (size == 2)
         {
             xRange = 26.4f;
             zRange = 14.9f;
+            moveSpeed = 7;
         }
         if (size == 3)
         {
             xRange = 25.75f;
             zRange = 14.3f;
+            moveSpeed = 10;
         }
         if (size == 4)
         {
             xRange = 25.5f;
             zRange = 13.25f;
+            moveSpeed = 14;
         }
         if (size == 5)
         {
             xRange = 21.8f;
             zRange = 10.25f;
+            moveSpeed = 19;
         }
     }
 
