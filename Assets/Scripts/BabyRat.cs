@@ -6,7 +6,6 @@ using UnityEngine;
 public class BabyRat : MonoBehaviour
 {
     bool invoked;
-    [SerializeField] int velocity = 2;
     [SerializeField] Material material;
 
     void Start()
@@ -32,8 +31,6 @@ public class BabyRat : MonoBehaviour
     void RandomMovement()
     {
         transform.Rotate(0, UnityEngine.Random.Range(1, 359), 0);
-        //int randomRange = UnityEngine.Random.Range(1, 5);
-        transform.position += transform.forward * velocity * Time.deltaTime; 
         invoked = false;
     }
 }

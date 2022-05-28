@@ -54,7 +54,11 @@ public class PlayerMovement : MonoBehaviour
             xRange = 21.8f;
             zRange = 10.25f;
         }
-        else return;
+        else
+        {
+            xRange = 26.7f;
+            zRange = 15.25f;
+        }
     }
 
     void ProcessTranslation()
