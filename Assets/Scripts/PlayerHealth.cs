@@ -12,12 +12,20 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] int requirementIncrease = 5;
     
     //TODO make player health/level/size/etc. display in playerUI
-    // [SerializeField] Canvas playerUI;
+    [SerializeField] Canvas playerUI;
     [SerializeField] Camera mainCamera;
     [SerializeField] PlayerGhost playerGhost;
+    [SerializeField] GameObject heart0;
+    [SerializeField] GameObject heart1;
+    [SerializeField] GameObject heart2;
+    [SerializeField] GameObject heart3;
+    [SerializeField] GameObject heart4;
+    [SerializeField] GameObject heart5;
+    [SerializeField] GameObject heart6;
     Animator animator;
     bool isSquished = false;
     bool isInvincible;
+    
 
 
     void Start()
@@ -149,7 +157,66 @@ public class PlayerHealth : MonoBehaviour
         isSquished = false;
     }
     
+    void HealthDisplay()
+    {
+        if (hitPoints < 1)
+        {
+            heart0.SetActive(false);
+        }
+        if (hitPoints < 2)
+        {
+            heart1.SetActive(false);
+        }
+        if (hitPoints < 3)
+        {
+            heart2.SetActive(false);
+        }
+        if (hitPoints < 4)
+        {
+            heart3.SetActive(false);
+        }
+        if (hitPoints < 5)
+        {
+            heart4.SetActive(false);
+        }
+        if (hitPoints < 6)
+        {
+            heart5.SetActive(false);
+        }
+        if (hitPoints < 7)
+        {
+            heart6.SetActive(false);
+        }
 
+        if (hitPoints >= 1)
+        {
+            heart0.SetActive(true);
+        }
+        if (hitPoints >= 2)
+        {
+            heart1.SetActive(true);
+        }
+        if (hitPoints >= 3)
+        {
+            heart2.SetActive(true);
+        }
+        if (hitPoints >= 4)
+        {
+            heart3.SetActive(true);
+        }
+        if (hitPoints >= 5)
+        {
+            heart4.SetActive(true);
+        }
+        if (hitPoints >= 6)
+        {
+            heart5.SetActive(true);
+        }
+        if (hitPoints >= 7)
+        {
+            heart6.SetActive(true);
+        }
+    }
     
     void Update()
     {
@@ -161,5 +228,6 @@ public class PlayerHealth : MonoBehaviour
         {
             IncreaseSize();
         }
+        HealthDisplay();
     }
 }
