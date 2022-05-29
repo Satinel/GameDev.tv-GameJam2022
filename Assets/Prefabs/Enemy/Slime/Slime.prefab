@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3536480041049924956}
   - component: {fileID: 16411916268897858}
   - component: {fileID: 3137023790434018205}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 444156370294102065}
   - component: {fileID: 444156370294102068}
   - component: {fileID: 444156370294102067}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -477,7 +477,7 @@ GameObject:
   - component: {fileID: 3101455571597776705}
   - component: {fileID: 7962108762337944955}
   - component: {fileID: 6219524096838936333}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: SlimeAlive
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -10234,7 +10234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7025718602670137501, guid: 4e26f6e4d9cdd9949b798602b61213b2, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e26f6e4d9cdd9949b798602b61213b2, type: 3}
@@ -10300,7 +10300,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6046388819969663542, guid: d97e28980b9972840b9db38cd2bf979b, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6046388819969663542, guid: d97e28980b9972840b9db38cd2bf979b, type: 3}
       propertyPath: m_IsActive
@@ -10432,7 +10432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8019642176437175940, guid: 979b08a40a174884db6b857d43f1331e, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8019642176437175940, guid: 979b08a40a174884db6b857d43f1331e, type: 3}
       propertyPath: m_IsActive
@@ -10568,7 +10568,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8106736679221624132, guid: db0d6cdbd51f55643ab243d3c71ea71f, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8106736679221624132, guid: db0d6cdbd51f55643ab243d3c71ea71f, type: 3}
       propertyPath: m_IsActive
@@ -10650,7 +10650,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8019642176437175940, guid: 979b08a40a174884db6b857d43f1331e, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8019642176437175940, guid: 979b08a40a174884db6b857d43f1331e, type: 3}
       propertyPath: m_IsActive
@@ -10720,7 +10720,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6046388819969663542, guid: d97e28980b9972840b9db38cd2bf979b, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6046388819969663542, guid: d97e28980b9972840b9db38cd2bf979b, type: 3}
       propertyPath: m_IsActive
@@ -10790,7 +10790,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8106736679221624132, guid: db0d6cdbd51f55643ab243d3c71ea71f, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8106736679221624132, guid: db0d6cdbd51f55643ab243d3c71ea71f, type: 3}
       propertyPath: m_IsActive
@@ -10865,6 +10865,10 @@ PrefabInstance:
     - target: {fileID: 8235563534121135641, guid: abc1b72c335338e4db9332c3916dfbc3, type: 3}
       propertyPath: m_Name
       value: SlimeAttack
+      objectReference: {fileID: 0}
+    - target: {fileID: 8235563534121135641, guid: abc1b72c335338e4db9332c3916dfbc3, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8235563534121135641, guid: abc1b72c335338e4db9332c3916dfbc3, type: 3}
       propertyPath: m_IsActive

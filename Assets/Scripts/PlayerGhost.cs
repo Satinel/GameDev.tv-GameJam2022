@@ -31,10 +31,19 @@ public class PlayerGhost : MonoBehaviour
         }
     }
 
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Host")
+        {
+            canPossess = false;
+        }
+    }
+
     
     void PossessHost()
     {
         Destroy(host);
+        canPossess = false;
         playerHealth.gameObject.SetActive(true);
         // playerHealth.GetComponent<Renderer>().material = material;
         gameObject.SetActive(false);

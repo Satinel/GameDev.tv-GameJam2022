@@ -27,6 +27,8 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] GameObject heart5;
     [SerializeField] GameObject heart6;
     [SerializeField] TMP_Text playerSizeText;
+    [SerializeField] Canvas deathCanvas;
+    [SerializeField] TMP_Text deathTextSub;
     Animator animator;
     Slider stomachSlider;
     RectTransform stomachBar;
@@ -49,6 +51,8 @@ public class PlayerHealth : MonoBehaviour
         hitPoints = maxHealth;
         ChangePlayerSizeText();
         animator = GetComponent<Animator>();
+        playerGhost.gameObject.SetActive(true);
+        gameObject.SetActive(false);
     }
 
     void OnEnable()
@@ -109,15 +113,25 @@ public class PlayerHealth : MonoBehaviour
             animator.SetBool("isDead", true);
             isInvincible = true;
             Debug.Log("You Died");
-
-            //TODO PlayerDeath method "You died etc. etc."
+            Invoke("PlayerDeathProcess", 0.5f);
             //TODO make a life depletion method
-            Invoke("BecomeGhost", 2f);
             return;
         }
         //TODO Play a sound
         isInvincible = true;
         Invoke("StopInvincibility", 1.5f);
+    }
+
+    void PlayerDeathProcess()
+    {
+        deathCanvas.enabled = true;
+        Invoke("SubtitleDelay", 0.5f);
+        Invoke("BecomeGhost", 2.5f);
+    }
+
+    void SubtitleDelay()
+    {
+        deathTextSub.enabled = true;
     }
 
     void StopInvincibility()
@@ -130,6 +144,8 @@ public class PlayerHealth : MonoBehaviour
         transform.parent.position = new Vector3(0, 300, 0);
         dungeonPosition.position = new Vector3 (0,0,0);
         playerGhost.gameObject.SetActive(true);
+        deathTextSub.enabled = false;
+        deathCanvas.enabled = false;
         gameObject.SetActive(false);
     }
 
