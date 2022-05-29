@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PauseUI : MonoBehaviour
 {
+    [SerializeField] GameObject pauseFirstButton;
     Canvas canvas;
     bool isPaused;
 
@@ -20,14 +22,17 @@ public class PauseUI : MonoBehaviour
             canvas.enabled = false;
             AudioListener.pause = false;
             Time.timeScale = 1;
+            EventSystem.current.SetSelectedGameObject(null);
             isPaused = false;
         }
         else
         {
             Cursor.visible = false;
             Time.timeScale = 0;
-            canvas.enabled = true;
             AudioListener.pause = true;
+            canvas.enabled = true;
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(pauseFirstButton);
             isPaused = true;
         }
     }

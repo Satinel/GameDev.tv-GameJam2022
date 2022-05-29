@@ -7,6 +7,7 @@ public class PlayerGhost : MonoBehaviour
 {
     [SerializeField] PlayerHealth playerHealth;
     bool canPossess;
+    int hostsRemaining = 10;
     GameObject host;
     ParticleSystem wisps;
     // Material material;
@@ -14,6 +15,22 @@ public class PlayerGhost : MonoBehaviour
     void Start()
     {
         wisps = GetComponent<ParticleSystem>();
+    }
+
+    void OnEnable()
+    {
+        if (hostsRemaining <=1)
+        {
+            ResetHosts();
+        }
+    }
+    void ResetHosts()
+    {
+        BabyRat[] babyRats = FindObjectsOfType<BabyRat>(includeInactive:true);
+        foreach (BabyRat babyRat in babyRats)
+        {
+            babyRat.gameObject.SetActive(true);
+        }
     }
     
     void OnTriggerEnter(Collider other)
@@ -42,7 +59,8 @@ public class PlayerGhost : MonoBehaviour
     
     void PossessHost()
     {
-        Destroy(host);
+        host.SetActive(false);
+        hostsRemaining --;
         canPossess = false;
         playerHealth.gameObject.SetActive(true);
         // playerHealth.GetComponent<Renderer>().material = material;
