@@ -32,7 +32,8 @@ public class PlayerBiteAttack : MonoBehaviour
         if (other.gameObject.tag == "Food")
         {
             int foodSource = other.GetComponent<Food>().getAte(damage);
-            biteFX.transform.localScale = other.transform.localScale;
+            int playerSize = playerHealth.GetCurrentSize();
+            biteFX.transform.localScale = new Vector3 (playerSize, playerSize, playerSize);
             Instantiate(biteFX, transform.position, Quaternion.identity);
             Debug.Log("I ate " + other.gameObject.name + " and it was worth " + foodSource);
             playerHealth.IncreaseHealth();
@@ -42,7 +43,8 @@ public class PlayerBiteAttack : MonoBehaviour
         if (other.gameObject.tag == "PlayerCorpse")
         {
             int foodSource = other.GetComponent<EatTutorial>().getAte(damage);
-            biteFX.transform.localScale = other.transform.localScale;
+            int playerSize = playerHealth.GetCurrentSize();
+            biteFX.transform.localScale = new Vector3 (playerSize, playerSize, playerSize);
             Instantiate(biteFX, transform.position, Quaternion.identity);
             playerMovement = GetComponentInParent<PlayerMovement>();
             playerMovement.TutorialDone = true;
