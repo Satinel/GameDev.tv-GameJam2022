@@ -14,7 +14,6 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] int requirementIncrease = 5; // How much the next stomach size increases by
     [SerializeField] int currentSize = 1; // The player's size level
     
-    //TODO make player health/level/size/etc. display in playerUI
     [SerializeField] Transform dungeonPosition; // The main playing area
     [SerializeField] GameObject stomachUI;
     [SerializeField] Camera mainCamera;
@@ -30,6 +29,8 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] Canvas deathCanvas;
     [SerializeField] TMP_Text deathTextSub;
     [SerializeField] GameObject ratCorpse;
+    [SerializeField] AudioClip hurtSFX;
+    AudioSource audioSource;
     Animator animator;
     Slider stomachSlider;
     RectTransform stomachBar;
@@ -51,6 +52,7 @@ public class PlayerHealth : MonoBehaviour
         stomachSlider.maxValue = stomachSize;
         hitPoints = maxHealth-1;
         ChangePlayerSizeText();
+        audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         playerGhost.gameObject.SetActive(true);
         gameObject.SetActive(false);
@@ -119,7 +121,7 @@ public class PlayerHealth : MonoBehaviour
             //TODO make a life depletion method
             return;
         }
-        //TODO Play a sound
+        audioSource.PlayOneShot(hurtSFX);
         isInvincible = true;
         Invoke("StopInvincibility", 1.5f);
     }
@@ -127,7 +129,6 @@ public class PlayerHealth : MonoBehaviour
     void CreateCorpse()
     {
         //NOTE if we get to make a boss fight this will likely need addressing
-        // ratCorpse.transform.parent = dungeonPosition;
         if (currentSize == 1)
         {
             ratCorpse.transform.localScale = new Vector3 (0.125f, 0.125f, 0.125f);
