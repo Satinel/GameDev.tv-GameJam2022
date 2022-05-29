@@ -126,22 +126,30 @@ public class PlayerHealth : MonoBehaviour
 
     void CreateCorpse()
     {
-        Instantiate(ratCorpse, transform.localPosition, Quaternion.identity);
         //NOTE if we get to make a boss fight this will likely need addressing
-        ratCorpse.transform.parent = dungeonPosition;
-        if (currentSize >= 1)
+        // ratCorpse.transform.parent = dungeonPosition;
+        if (currentSize == 1)
         {
             ratCorpse.transform.localScale = new Vector3 (0.125f, 0.125f, 0.125f);
-            if (currentSize >= 2)
-                ratCorpse.transform.localScale *= 2;
-                if (currentSize >= 3)
-                    ratCorpse.transform.localScale *= 2;
-                    if (currentSize >= 4)
-                        ratCorpse.transform.localScale *= 2;
-                        if (currentSize >= 5)
-                            ratCorpse.transform.localScale *= 2;
         }
-
+        if (currentSize == 2)
+        {
+            ratCorpse.transform.localScale =  new Vector3 (0.125f, 0.125f, 0.125f) * 2;
+        }
+        if (currentSize == 3)
+        {
+            ratCorpse.transform.localScale =  new Vector3 (0.5f, 0.5f, 0.5f);
+        }
+        if (currentSize == 4)
+        {
+            ratCorpse.transform.localScale = new Vector3 (0.5f, 0.5f, 0.5f) * 2;
+        }
+        if (currentSize == 5)
+        {
+            ratCorpse.transform.localScale = new Vector3 (2f, 2f, 2f);
+        
+        }
+        Instantiate(ratCorpse, transform.position, transform.rotation, dungeonPosition);
     }
 
     void PlayerDeathProcess()
