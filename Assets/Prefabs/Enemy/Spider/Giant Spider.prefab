@@ -6496,7 +6496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxFoodPoints: 4
   foodPoints: 0
-  foodValue: 2
+  foodValue: 4
 --- !u!1 &6285131928927201009
 GameObject:
   m_ObjectHideFlags: 0
@@ -11275,8 +11275,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bea1cd4b9e5399b46867c3ba0ac451d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHitpoints: 16
-  hitPoints: 16
+  maxHitpoints: 24
+  hitPoints: 24
 --- !u!199 &3001923274176524047
 ParticleSystemRenderer:
   serializedVersion: 6

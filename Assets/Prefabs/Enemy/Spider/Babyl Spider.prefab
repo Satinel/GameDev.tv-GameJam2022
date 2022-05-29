@@ -1260,8 +1260,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTarget: {fileID: 0}
   speed: 2
-  aggroRange: 2
-  attackRange: 0.5
+  aggroRange: 4
+  attackRange: 1
   attackSFX: {fileID: 8300000, guid: c4b8b93cde304bf47aa977da58eb5758, type: 3}
   hurtSFX: {fileID: 8300000, guid: 205ce6c11755a594283d1552a0676f24, type: 3}
   audioSource: {fileID: 8156465809717349513}
@@ -11275,8 +11275,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bea1cd4b9e5399b46867c3ba0ac451d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHitpoints: 2
-  hitPoints: 2
+  maxHitpoints: 4
+  hitPoints: 4
 --- !u!199 &3001923274176524047
 ParticleSystemRenderer:
   serializedVersion: 6

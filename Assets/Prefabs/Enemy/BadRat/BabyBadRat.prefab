@@ -318,8 +318,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTarget: {fileID: 0}
   speed: 2
-  aggroRange: 1.25
-  attackRange: 0.3125
+  aggroRange: 2.5
+  attackRange: 1
   attackSFX: {fileID: 8300000, guid: 7baec6a67f22f0741ab3a0a434236205, type: 3}
   hurtSFX: {fileID: 8300000, guid: fc030466edb83db4ab6160c1a405c6ba, type: 3}
   audioSource: {fileID: 2419594369120495124}

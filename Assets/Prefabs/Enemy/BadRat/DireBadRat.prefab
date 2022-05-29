@@ -10673,8 +10673,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bea1cd4b9e5399b46867c3ba0ac451d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHitpoints: 26
-  hitPoints: 26
+  maxHitpoints: 70
+  hitPoints: 70
 --- !u!1 &2340689697039585882
 GameObject:
   m_ObjectHideFlags: 0
@@ -16806,7 +16806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45c366ab553f9ef4ab9b6b74310164a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxFoodPoints: 5
+  maxFoodPoints: 6
   foodPoints: 0
   foodValue: 6
 --- !u!1 &7789891657291279318
