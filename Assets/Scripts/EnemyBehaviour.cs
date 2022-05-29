@@ -10,8 +10,8 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] float attackRange = 1;
     [SerializeField] AudioClip attackSFX;
     [SerializeField] AudioClip hurtSFX;
+    [SerializeField] AudioSource audioSource;
     [SerializeField] AudioSource hurtAudioSource;
-    AudioSource audioSource;
     Enemy livingVersion;
     Food deadVersion;
     float startingYPosition;

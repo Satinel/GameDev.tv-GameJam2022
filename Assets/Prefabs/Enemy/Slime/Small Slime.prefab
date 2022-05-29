@@ -287,6 +287,7 @@ MonoBehaviour:
   attackRange: 1.25
   attackSFX: {fileID: 8300000, guid: c2e4127a11088444e880e61b7c9b73db, type: 3}
   hurtSFX: {fileID: 8300000, guid: 1825ba51755ff394ea66879c9b1a63a2, type: 3}
+  audioSource: {fileID: 4606848394706677266}
   hurtAudioSource: {fileID: 291164303160598366}
 --- !u!82 &4606848394706677266
 AudioSource:

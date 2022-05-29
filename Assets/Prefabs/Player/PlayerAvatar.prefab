@@ -522,6 +522,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   playerSize: 0
+  biteFX: {fileID: 0}
 --- !u!1 &3980224899408397851
 GameObject:
   m_ObjectHideFlags: 0
@@ -961,6 +962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19d0320c42a86bf4dba85c9d910b8244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swipeFX: {fileID: 2871409626268823280, guid: 7ff7e441da53aa243b6381339cb16e40, type: 3}
 --- !u!1 &4451506753214900169
 GameObject:
   m_ObjectHideFlags: 0
@@ -6950,11 +6952,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 3
   hitPoints: 0
-  stomachLevel: 0
   stomachSize: 10
-  currentSize: 1
+  stomachLevel: 0
   requirementIncrease: 5
+  currentSize: 1
+  dungeonPosition: {fileID: 0}
+  stomachUI: {fileID: 0}
   mainCamera: {fileID: 0}
+  playerGhost: {fileID: 0}
+  heart0: {fileID: 0}
+  heart1: {fileID: 0}
+  heart2: {fileID: 0}
+  heart3: {fileID: 0}
+  heart4: {fileID: 0}
+  heart5: {fileID: 0}
+  heart6: {fileID: 0}
+  playerSizeText: {fileID: 0}
+  deathCanvas: {fileID: 0}
+  deathTextSub: {fileID: 0}
+  ratCorpse: {fileID: 0}
 --- !u!54 &3314152731477261712
 Rigidbody:
   m_ObjectHideFlags: 0
