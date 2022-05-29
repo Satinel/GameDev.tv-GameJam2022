@@ -7027,6 +7027,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   playerSize: 0
+  biteFX: {fileID: 0}
 --- !u!135 &190457853
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7595,6 +7596,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   playerSize: 0
+  biteFX: {fileID: 0}
 --- !u!135 &292645437
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -26036,6 +26038,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   playerSize: 0
+  biteFX: {fileID: 0}
 --- !u!135 &627854750
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -40204,6 +40207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   playerSize: 0
+  biteFX: {fileID: 0}
 --- !u!135 &1053220116
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -40316,6 +40320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   playerSize: 0
+  biteFX: {fileID: 0}
 --- !u!135 &1053567142
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -47398,6 +47403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   playerSize: 0
+  biteFX: {fileID: 0}
 --- !u!135 &1317119785
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -48934,6 +48940,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   playerSize: 0
+  biteFX: {fileID: 0}
 --- !u!135 &1452409481
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -55121,6 +55128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   playerSize: 0
+  biteFX: {fileID: 0}
 --- !u!135 &1547528876
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -99463,6 +99471,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   playerSize: 0
+  biteFX: {fileID: 0}
 --- !u!135 &2078647074
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -106162,6 +106171,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1463300484767401721, guid: fbcb4437be62c9242bdb33d487bf4fa1, type: 3}
+      propertyPath: biteFX
+      value: 
+      objectReference: {fileID: 2871409626268823280, guid: e5086ae6652a8b947b063094f04ac0ad, type: 3}
     - target: {fileID: 5171902981647650777, guid: fbcb4437be62c9242bdb33d487bf4fa1, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -106246,6 +106259,10 @@ PrefabInstance:
       propertyPath: playerUI
       value: 
       objectReference: {fileID: 1752254408}
+    - target: {fileID: 6713654544362181762, guid: fbcb4437be62c9242bdb33d487bf4fa1, type: 3}
+      propertyPath: ratCorpse
+      value: 
+      objectReference: {fileID: 6482083783531517063, guid: 0faad521e2455374891be4d7f5d9052c, type: 3}
     - target: {fileID: 6713654544362181762, guid: fbcb4437be62c9242bdb33d487bf4fa1, type: 3}
       propertyPath: stomachUI
       value: 

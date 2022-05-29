@@ -3,7 +3,8 @@ guid: b1aed3da6db4ddf4b85f0abe93fab957
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - biteFX: {fileID: 2871409626268823280, guid: e5086ae6652a8b947b063094f04ac0ad, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

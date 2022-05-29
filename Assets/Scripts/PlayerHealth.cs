@@ -29,6 +29,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] TMP_Text playerSizeText;
     [SerializeField] Canvas deathCanvas;
     [SerializeField] TMP_Text deathTextSub;
+    [SerializeField] GameObject ratCorpse;
     Animator animator;
     Slider stomachSlider;
     RectTransform stomachBar;
@@ -112,6 +113,7 @@ public class PlayerHealth : MonoBehaviour
         {
             animator.SetBool("isDead", true);
             isInvincible = true;
+            CreateCorpse();
             Debug.Log("You Died");
             Invoke("PlayerDeathProcess", 0.5f);
             //TODO make a life depletion method
@@ -120,6 +122,26 @@ public class PlayerHealth : MonoBehaviour
         //TODO Play a sound
         isInvincible = true;
         Invoke("StopInvincibility", 1.5f);
+    }
+
+    void CreateCorpse()
+    {
+        Instantiate(ratCorpse, transform.localPosition, Quaternion.identity);
+        //NOTE if we get to make a boss fight this will likely need addressing
+        ratCorpse.transform.parent = dungeonPosition;
+        if (currentSize >= 1)
+        {
+            ratCorpse.transform.localScale = new Vector3 (0.125f, 0.125f, 0.125f);
+            if (currentSize >= 2)
+                ratCorpse.transform.localScale *= 2;
+                if (currentSize >= 3)
+                    ratCorpse.transform.localScale *= 2;
+                    if (currentSize >= 4)
+                        ratCorpse.transform.localScale *= 2;
+                        if (currentSize >= 5)
+                            ratCorpse.transform.localScale *= 2;
+        }
+
     }
 
     void PlayerDeathProcess()
@@ -288,6 +310,11 @@ public class PlayerHealth : MonoBehaviour
     
     void FoodDisplay()
     {
+        if (currentSize >= 5)
+        {
+            stomachSlider.value = stomachSlider.maxValue;
+            return;
+        }
         stomachSlider.value = stomachLevel;
         stomachSlider.maxValue = stomachSize;
     }
@@ -298,14 +325,22 @@ public class PlayerHealth : MonoBehaviour
         {
             IncreaseSize();
         }
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            IncreaseSize();
-        }
         HealthDisplay();
         if (hitPoints >= 1)
         {
             FoodDisplay();
         }
+
+        //TODO DELETE THESE TWO
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            IncreaseSize();
+        }
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            CreateCorpse();
+        }
     }
+
+
 }

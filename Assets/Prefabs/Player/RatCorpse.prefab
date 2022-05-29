@@ -602,10 +602,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3346839488323909841}
   - component: {fileID: 3645630590688384188}
-  - component: {fileID: 5551325748728650650}
+  - component: {fileID: -63548801140809589}
   m_Layer: 0
   m_Name: RatCorpse
-  m_TagString: Food
+  m_TagString: PlayerCorpse
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -645,7 +645,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3, y: 2.5, z: 5}
   m_Center: {x: 0, y: 1, z: 1.84}
---- !u!114 &5551325748728650650
+--- !u!114 &-63548801140809589
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -654,12 +654,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6482083783531517063}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45c366ab553f9ef4ab9b6b74310164a1, type: 3}
+  m_Script: {fileID: 11500000, guid: 356fe8516fe15e14596d442b371a251a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxFoodPoints: 3
-  foodPoints: 0
-  foodValue: 4
 --- !u!1 &6814723657438810024
 GameObject:
   m_ObjectHideFlags: 0
