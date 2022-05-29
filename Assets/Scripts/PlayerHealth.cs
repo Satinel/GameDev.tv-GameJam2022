@@ -38,6 +38,7 @@ public class PlayerHealth : MonoBehaviour
     Vector2 sBarDefaultSize;
     bool isSquished = false;
     bool isInvincible;
+    bool isBigger;
     
     void Start()
     {
@@ -177,7 +178,7 @@ public class PlayerHealth : MonoBehaviour
         stomachLevel += foodValue;
     }
 
-    void IncreaseSize()
+    IEnumerator IncreaseSize()
     {
         if (currentSize < 5)
         {
@@ -186,7 +187,28 @@ public class PlayerHealth : MonoBehaviour
             SendMessageUpwards("ReclampRange", SendMessageOptions.RequireReceiver);
             maxHealth++;
             hitPoints++;
-            transform.localScale *= 2;
+            
+            isInvincible = true;
+            isBigger = false;
+            for (float i = 0; i < 11; i += 1)
+            {
+                if (!isBigger)
+                {
+                    //TODO play SFX at decreased pitch
+                    transform.localScale *= 2;
+                    isBigger = true;
+                }
+                else
+                {
+                    //TODO play SFX at increased pitch
+                    transform.localScale *= 0.5f;
+                    isBigger = false;
+                }
+                yield return new WaitForSeconds(0.1f);
+
+            }
+            isInvincible = false;
+
             mainCamera.transform.localPosition *= 2; //mainCamera.transform.position * 2;
             stomachBar.localPosition += new Vector3 (52.5f, 0, 0);
             stomachBar.sizeDelta += new Vector2 (105f, 0);
