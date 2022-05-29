@@ -9,6 +9,8 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] float aggroRange = 15;
     [SerializeField] float attackRange = 1;
     [SerializeField] AudioClip attackSFX;
+    [SerializeField] AudioClip hurtSFX;
+    [SerializeField] AudioSource hurtAudioSource;
     AudioSource audioSource;
     Enemy livingVersion;
     Food deadVersion;
@@ -74,6 +76,14 @@ public class EnemyBehaviour : MonoBehaviour
             audioSource.Stop();
         }
         audioSource.PlayOneShot(attackSFX);
+    }
+       void PlayHurtSound()
+    {
+        if (hurtAudioSource.isPlaying)
+        {
+            hurtAudioSource.Stop();
+        }
+        hurtAudioSource.PlayOneShot(hurtSFX);
     }
 
     void Update()
