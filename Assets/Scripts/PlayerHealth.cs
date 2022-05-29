@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using System;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -24,6 +26,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] GameObject heart4;
     [SerializeField] GameObject heart5;
     [SerializeField] GameObject heart6;
+    [SerializeField] TMP_Text playerSizeText;
     Animator animator;
     Slider stomachSlider;
     RectTransform stomachBar;
@@ -44,6 +47,7 @@ public class PlayerHealth : MonoBehaviour
         stomachSlider.value = stomachLevel;
         stomachSlider.maxValue = stomachSize;
         hitPoints = maxHealth;
+        ChangePlayerSizeText();
         animator = GetComponent<Animator>();
     }
 
@@ -55,6 +59,7 @@ public class PlayerHealth : MonoBehaviour
     //     stomachSize = 10;
     //     stomachLevel = 0;
         transform.localScale = new Vector3(0.125f,0.125f,0.125f);
+        ChangePlayerSizeText();
     //     mainCamera.transform.localPosition = new Vector3 (0, 1.25f, -2.125f);
     //     SendMessageUpwards("ReclampRange", SendMessageOptions.RequireReceiver);
     }
@@ -62,6 +67,7 @@ public class PlayerHealth : MonoBehaviour
     void OnDisable()
     {
         if (stomachBar == null) { return; }
+        if (playerSizeText == null) { return; }
         animator.SetBool("isDead", false);
         isInvincible = false;
         currentSize = 1;
@@ -71,7 +77,8 @@ public class PlayerHealth : MonoBehaviour
         stomachLevel = 0;        
         stomachBar.position = sBarDefaultPos;
         stomachBar.sizeDelta = sBarDefaultSize;
-        FoodDisplay();        
+        FoodDisplay();
+        playerSizeText.SetText("Ghost");
         transform.localScale = new Vector3(0.125f,0.125f,0.125f);
         mainCamera.transform.localPosition = new Vector3 (0, 1.25f, -2.125f);
         SendMessageUpwards("ReclampRange", SendMessageOptions.DontRequireReceiver);
@@ -146,6 +153,31 @@ public class PlayerHealth : MonoBehaviour
             stomachBar.localPosition += new Vector3 (52.5f, 0, 0);
             stomachBar.sizeDelta += new Vector2 (105f, 0);
             stomachLevel = 0;
+            ChangePlayerSizeText();
+        }
+    }
+
+    void ChangePlayerSizeText()
+    {
+        if (currentSize == 1)
+        {
+            playerSizeText.SetText("Baby Rat");
+        }
+        if (currentSize == 2)
+        {
+            playerSizeText.SetText("Young Rat");
+        }
+        if (currentSize == 3)
+        {
+            playerSizeText.SetText("Adult Rat");
+        }
+        if (currentSize == 4)
+        {
+            playerSizeText.SetText("Giant Rat");
+        }
+        if (currentSize == 5)
+        {
+            playerSizeText.SetText("Dire Rat");
         }
     }
 
