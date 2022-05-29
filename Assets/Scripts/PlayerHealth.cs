@@ -345,7 +345,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (stomachLevel >= stomachSize && !isSquished)
         {
-            IncreaseSize();
+            StartCoroutine(IncreaseSize());
         }
         HealthDisplay();
         if (hitPoints >= 1)
@@ -356,7 +356,7 @@ public class PlayerHealth : MonoBehaviour
         //TODO DELETE THESE TWO
         if (Input.GetKeyDown(KeyCode.L))
         {
-            IncreaseSize();
+            StartCoroutine(IncreaseSize());
         }
         if (Input.GetKeyDown(KeyCode.Return))
         {
