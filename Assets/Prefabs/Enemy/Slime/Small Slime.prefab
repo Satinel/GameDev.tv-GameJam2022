@@ -173,7 +173,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ac78346ca54c6f64f81f869a94b7de98, type: 2}
+  - {fileID: 2100000, guid: 394e77ad73f87d242958af61337158b9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 1683540292}
   - component: {fileID: 4606848394706677266}
   m_Layer: 0
-  m_Name: Slime
+  m_Name: Small Slime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -224,7 +224,7 @@ Transform:
   m_GameObject: {fileID: 444156370888846566}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 0.125, y: 0.125, z: 0.125}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8282196433631800921}
@@ -282,8 +282,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTarget: {fileID: 0}
   speed: 2
-  aggroRange: 10
-  attackRange: 2.5
+  aggroRange: 5
+  attackRange: 1.25
   attackSFX: {fileID: 8300000, guid: c2e4127a11088444e880e61b7c9b73db, type: 3}
 --- !u!82 &4606848394706677266
 AudioSource:
@@ -297,8 +297,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.75
-  m_Pitch: 1.1
+  m_Volume: 0.25
+  m_Pitch: 1.5
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -442,7 +442,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ac78346ca54c6f64f81f869a94b7de98, type: 2}
+  - {fileID: 2100000, guid: 394e77ad73f87d242958af61337158b9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5313,7 +5313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bea1cd4b9e5399b46867c3ba0ac451d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHitpoints: 12
+  maxHitpoints: 6
   hitPoints: 0
 --- !u!1 &7899727491617782647
 GameObject:
@@ -10160,7 +10160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxFoodPoints: 3
   foodPoints: 0
-  foodValue: 2
+  foodValue: 1
 --- !u!1001 &1286658269561270690
 PrefabInstance:
   m_ObjectHideFlags: 0
