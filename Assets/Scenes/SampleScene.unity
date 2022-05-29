@@ -120751,6 +120751,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1756408881}
     - target: {fileID: 6713654544362181762, guid: fbcb4437be62c9242bdb33d487bf4fa1, type: 3}
+      propertyPath: growSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: ac28f51a33a3283448cdbcab590b84c9, type: 3}
+    - target: {fileID: 6713654544362181762, guid: fbcb4437be62c9242bdb33d487bf4fa1, type: 3}
       propertyPath: stomachUI
       value: 
       objectReference: {fileID: 50406917}

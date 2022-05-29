@@ -30,6 +30,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] TMP_Text deathTextSub;
     [SerializeField] GameObject ratCorpse;
     [SerializeField] AudioClip hurtSFX;
+    [SerializeField] AudioClip growSFX;
     AudioSource audioSource;
     Animator animator;
     Slider stomachSlider;
@@ -190,17 +191,16 @@ public class PlayerHealth : MonoBehaviour
             
             isInvincible = true;
             isBigger = false;
+            audioSource.PlayOneShot(growSFX);
             for (float i = 0; i < 11; i += 1)
             {
                 if (!isBigger)
                 {
-                    //TODO play SFX at decreased pitch
                     transform.localScale *= 2;
                     isBigger = true;
                 }
                 else
                 {
-                    //TODO play SFX at increased pitch
                     transform.localScale *= 0.5f;
                     isBigger = false;
                 }
