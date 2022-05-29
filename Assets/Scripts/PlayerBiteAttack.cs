@@ -7,6 +7,7 @@ public class PlayerBiteAttack : MonoBehaviour
     [SerializeField] int damage = 1;
     [SerializeField] int playerSize;
     PlayerHealth playerHealth;
+    PlayerMovement playerMovement;
 
     void Start()
     {
@@ -32,10 +33,19 @@ public class PlayerBiteAttack : MonoBehaviour
             playerHealth.IncreaseHealth();
             playerHealth.GainFood(foodSource);
         }
+
+        if (other.gameObject.tag == "PlayerCorpse")
+        {
+            int foodSource = other.GetComponent<EatTutorial>().getAte(damage);
+            playerMovement = GetComponentInParent<PlayerMovement>();
+            playerMovement.TutorialDone = true;
+            playerHealth.IncreaseHealth();
+            playerHealth.GainFood(foodSource);
+        }
     }
 
     void Update()
     {
-        
+
     }
 }

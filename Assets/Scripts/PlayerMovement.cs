@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     float zThrow;
 
     public bool isAttacking;
+    public bool TutorialDone;
 
     [SerializeField] PlayerHealth playerHealth;
 

@@ -48,7 +48,7 @@ public class PlayerHealth : MonoBehaviour
         sBarDefaultSize = stomachBar.sizeDelta;
         stomachSlider.value = stomachLevel;
         stomachSlider.maxValue = stomachSize;
-        hitPoints = maxHealth;
+        hitPoints = maxHealth-1;
         ChangePlayerSizeText();
         animator = GetComponent<Animator>();
         playerGhost.gameObject.SetActive(true);
