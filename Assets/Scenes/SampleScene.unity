@@ -120755,6 +120755,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: ac28f51a33a3283448cdbcab590b84c9, type: 3}
     - target: {fileID: 6713654544362181762, guid: fbcb4437be62c9242bdb33d487bf4fa1, type: 3}
+      propertyPath: ratGhost
+      value: 
+      objectReference: {fileID: 7618765638014107425, guid: 6b2f446419a0c4c4eaffc75bf5c91342, type: 3}
+    - target: {fileID: 6713654544362181762, guid: fbcb4437be62c9242bdb33d487bf4fa1, type: 3}
       propertyPath: stomachUI
       value: 
       objectReference: {fileID: 50406917}
@@ -120766,6 +120770,10 @@ PrefabInstance:
       propertyPath: deathTextSub
       value: 
       objectReference: {fileID: 1842587695}
+    - target: {fileID: 6713654544362181762, guid: fbcb4437be62c9242bdb33d487bf4fa1, type: 3}
+      propertyPath: defeatJingle
+      value: 
+      objectReference: {fileID: 8300000, guid: 629d28be6ec49b243bec71d53451392f, type: 3}
     - target: {fileID: 6713654544362181762, guid: fbcb4437be62c9242bdb33d487bf4fa1, type: 3}
       propertyPath: playerSizeText
       value: 

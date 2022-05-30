@@ -29,8 +29,10 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] Canvas deathCanvas;
     [SerializeField] TMP_Text deathTextSub;
     [SerializeField] GameObject ratCorpse;
+    [SerializeField] GameObject ratGhost;
     [SerializeField] AudioClip hurtSFX;
     [SerializeField] AudioClip growSFX;
+    [SerializeField] AudioClip defeatJingle;
     AudioSource audioSource;
     Animator animator;
     Slider stomachSlider;
@@ -110,7 +112,7 @@ public class PlayerHealth : MonoBehaviour
             isInvincible = true;
             CreateCorpse();
             Debug.Log("You Died");
-            Invoke("PlayerDeathProcess", 0.5f);
+            Invoke("PlayerDeathProcess", 1f);
             //TODO make a life depletion method
             return;
         }
@@ -125,32 +127,40 @@ public class PlayerHealth : MonoBehaviour
         if (currentSize == 1)
         {
             ratCorpse.transform.localScale = new Vector3 (0.125f, 0.125f, 0.125f);
+            ratGhost.transform.localScale = new Vector3 (0.025f, 0.025f, 0.025f);
         }
         if (currentSize == 2)
         {
             ratCorpse.transform.localScale =  new Vector3 (0.125f, 0.125f, 0.125f) * 2;
+            ratGhost.transform.localScale = new Vector3 (0.025f, 0.025f, 0.025f)* 2;
         }
         if (currentSize == 3)
         {
             ratCorpse.transform.localScale =  new Vector3 (0.5f, 0.5f, 0.5f);
+            ratGhost.transform.localScale = new Vector3 (0.025f, 0.025f, 0.025f)* 4;
         }
         if (currentSize == 4)
         {
             ratCorpse.transform.localScale = new Vector3 (0.5f, 0.5f, 0.5f) * 2;
+            ratGhost.transform.localScale = new Vector3 (0.025f, 0.025f, 0.025f)* 8;
         }
         if (currentSize == 5)
         {
             ratCorpse.transform.localScale = new Vector3 (2f, 2f, 2f);
+            ratGhost.transform.localScale = new Vector3 (0.025f, 0.025f, 0.025f)* 16;
         
         }
         Instantiate(ratCorpse, transform.position, transform.rotation, dungeonPosition);
+        GameObject cloneGhost = Instantiate(ratGhost, transform.position, Quaternion.identity, dungeonPosition);
+        Destroy(cloneGhost, 1f);
     }
 
     void PlayerDeathProcess()
     {
+        audioSource.PlayOneShot(defeatJingle);
         deathCanvas.enabled = true;
-        Invoke("SubtitleDelay", 0.5f);
-        Invoke("BecomeGhost", 2.5f);
+        Invoke("SubtitleDelay", 3.1f);
+        Invoke("BecomeGhost", 5f);
     }
 
     void SubtitleDelay()
@@ -188,10 +198,10 @@ public class PlayerHealth : MonoBehaviour
             SendMessageUpwards("ReclampRange", SendMessageOptions.RequireReceiver);
             maxHealth++;
             hitPoints++;
-            
             isInvincible = true;
             isBigger = false;
             audioSource.PlayOneShot(growSFX);
+            ChangePlayerSizeText();
             for (float i = 0; i < 11; i += 1)
             {
                 if (!isBigger)
@@ -208,12 +218,10 @@ public class PlayerHealth : MonoBehaviour
 
             }
             isInvincible = false;
-
             mainCamera.transform.localPosition *= 2; //mainCamera.transform.position * 2;
             stomachBar.localPosition += new Vector3 (52.5f, 0, 0);
             stomachBar.sizeDelta += new Vector2 (105f, 0);
             stomachLevel = 0;
-            ChangePlayerSizeText();
         }
     }
 
