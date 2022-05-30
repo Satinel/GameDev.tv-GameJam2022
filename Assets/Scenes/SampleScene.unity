@@ -127297,6 +127297,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 421632717727366841, guid: fbcb4437be62c9242bdb33d487bf4fa1, type: 3}
+      propertyPath: playerMovement
+      value: 
+      objectReference: {fileID: 1140900658}
     - target: {fileID: 5171902981647650777, guid: fbcb4437be62c9242bdb33d487bf4fa1, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -127421,6 +127425,10 @@ PrefabInstance:
       propertyPath: defeatJingle
       value: 
       objectReference: {fileID: 8300000, guid: 629d28be6ec49b243bec71d53451392f, type: 3}
+    - target: {fileID: 6713654544362181762, guid: fbcb4437be62c9242bdb33d487bf4fa1, type: 3}
+      propertyPath: playerMovement
+      value: 
+      objectReference: {fileID: 1140900658}
     - target: {fileID: 6713654544362181762, guid: fbcb4437be62c9242bdb33d487bf4fa1, type: 3}
       propertyPath: playerSizeText
       value: 
