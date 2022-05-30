@@ -12,13 +12,14 @@ public class PauseUI : MonoBehaviour
     void Start()
     {
         canvas = GetComponent<Canvas>();
+        Cursor.visible = false;
     }
 
     public void PauseGame()
     {
         if (isPaused)
         {
-            Cursor.visible = true;
+            Cursor.visible = false;
             canvas.enabled = false;
             AudioListener.pause = false;
             Time.timeScale = 1;
@@ -27,7 +28,7 @@ public class PauseUI : MonoBehaviour
         }
         else
         {
-            Cursor.visible = false;
+            Cursor.visible = true;
             Time.timeScale = 0;
             AudioListener.pause = true;
             canvas.enabled = true;

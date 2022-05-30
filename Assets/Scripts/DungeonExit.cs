@@ -19,6 +19,7 @@ public class DungeonExit : MonoBehaviour
             playerMovement.GetComponent<PlayerMovement>().GameComplete = true;
             Time.timeScale = 0;
             audioSource.Stop();
+            audioSource.volume = 1;
             audioSource.PlayOneShot(victoryMusic);
             victoryCanvas.enabled = true;
             Debug.Log("VICTORY!");
