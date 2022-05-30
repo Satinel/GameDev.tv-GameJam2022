@@ -7,7 +7,7 @@ public class PlayerRotation : MonoBehaviour
 
     //https://answers.unity.com/questions/803365/make-the-player-face-his-movement-direction.html
     [SerializeField] float rotationSpeed = 0.15f;
-    [SerializeField] Animation runAnimation;
+    [SerializeField] PlayerMovement playerMovement;
     float xThrow;
     float zThrow;
     Animator animator;
@@ -38,6 +38,14 @@ public class PlayerRotation : MonoBehaviour
     
     void Update()
     {
-        RotatePlayer();
+        if (playerMovement.GameComplete)
+        {
+            return;
+        }
+        if (!playerMovement.isAttacking)
+        {
+            RotatePlayer();
+        }
+
     }
 }

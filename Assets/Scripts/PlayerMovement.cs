@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool isAttacking;
     public bool TutorialDone;
+    public bool GameComplete;
 
     [SerializeField] PlayerHealth playerHealth;
 
@@ -80,6 +81,10 @@ public class PlayerMovement : MonoBehaviour
     
     void Update()
     {
+        if (GameComplete)
+        {
+            return;
+        }
         if (!isAttacking)
         {
             ProcessTranslation();

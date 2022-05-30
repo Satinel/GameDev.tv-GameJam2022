@@ -45614,6 +45614,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1138122277}
   m_Mesh: {fileID: -2432090755550338912, guid: bc62d08d0bf1a3140af4edfc24059caa, type: 3}
+--- !u!114 &1140900658 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5171902981647650782, guid: fbcb4437be62c9242bdb33d487bf4fa1, type: 3}
+  m_PrefabInstance: {fileID: 5171902982317365493}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c3fbb6f70c35f147956996b1d88b992, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1149080893
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -138645,6 +138656,7 @@ MonoBehaviour:
   audioSource: {fileID: 1859973485}
   victoryMusic: {fileID: 8300000, guid: 08f67dc9eef27f74f9afcfa0cc0452ae, type: 3}
   victoryCanvas: {fileID: 1442981373}
+  playerMovement: {fileID: 1140900658}
 --- !u!1 &7302404730348781297
 GameObject:
   m_ObjectHideFlags: 0

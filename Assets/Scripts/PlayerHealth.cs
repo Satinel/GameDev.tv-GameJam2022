@@ -34,6 +34,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] AudioClip growSFX;
     [SerializeField] AudioClip defeatJingle;
     [SerializeField] AudioSource musicPlayer;
+    [SerializeField] PlayerMovement playerMovement;
     AudioSource audioSource;
     Animator animator;
     Slider stomachSlider;
@@ -115,7 +116,7 @@ public class PlayerHealth : MonoBehaviour
             CreateCorpse();
             Debug.Log("You Died");
             Invoke("PlayerDeathProcess", 1f);
-            //TODO make a life depletion method
+            playerMovement.isAttacking = true;
             return;
         }
         audioSource.PlayOneShot(hurtSFX);
@@ -184,6 +185,7 @@ public class PlayerHealth : MonoBehaviour
         deathCanvas.enabled = false;
         gameObject.SetActive(false);
         musicPlayer.Play();
+        playerMovement.isAttacking = false;
     }
 
 
@@ -362,16 +364,6 @@ public class PlayerHealth : MonoBehaviour
         if (hitPoints >= 1)
         {
             FoodDisplay();
-        }
-
-        //TODO DELETE THESE TWO
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            StartCoroutine(IncreaseSize());
-        }
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            CreateCorpse();
         }
     }
 

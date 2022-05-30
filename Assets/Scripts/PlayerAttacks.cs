@@ -46,7 +46,6 @@ public class PlayerAttacks : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             animator.SetTrigger("swiping");
-            //TODO play a sound
         }
     }
 
@@ -60,6 +59,10 @@ public class PlayerAttacks : MonoBehaviour
     
     void Update()
     {
+        if (playerMovement.GameComplete)
+        {
+            return;
+        }
         Swipe();
         Bite();
     }
