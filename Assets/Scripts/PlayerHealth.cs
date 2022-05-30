@@ -110,7 +110,7 @@ public class PlayerHealth : MonoBehaviour
         animator.SetTrigger("tookDamage");
         if (hitPoints <= 0)
         {
-            musicPlayer.Pause();
+            musicPlayer.Stop();
             animator.SetBool("isDead", true);
             isInvincible = true;
             CreateCorpse();
@@ -200,6 +200,9 @@ public class PlayerHealth : MonoBehaviour
         {
             currentSize++;
             stomachSize += currentSize * requirementIncrease;
+            stomachLevel = 0;
+            stomachBar.localPosition += new Vector3 (52.5f, 0, 0);
+            stomachBar.sizeDelta += new Vector2 (105f, 0);
             SendMessageUpwards("ReclampRange", SendMessageOptions.RequireReceiver);
             maxHealth++;
             hitPoints++;
@@ -224,9 +227,6 @@ public class PlayerHealth : MonoBehaviour
             }
             isInvincible = false;
             mainCamera.transform.localPosition *= 2; //mainCamera.transform.position * 2;
-            stomachBar.localPosition += new Vector3 (52.5f, 0, 0);
-            stomachBar.sizeDelta += new Vector2 (105f, 0);
-            stomachLevel = 0;
         }
     }
 
