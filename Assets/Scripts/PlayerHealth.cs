@@ -33,6 +33,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] AudioClip hurtSFX;
     [SerializeField] AudioClip growSFX;
     [SerializeField] AudioClip defeatJingle;
+    [SerializeField] AudioSource musicPlayer;
     AudioSource audioSource;
     Animator animator;
     Slider stomachSlider;
@@ -108,6 +109,7 @@ public class PlayerHealth : MonoBehaviour
         animator.SetTrigger("tookDamage");
         if (hitPoints <= 0)
         {
+            musicPlayer.Pause();
             animator.SetBool("isDead", true);
             isInvincible = true;
             CreateCorpse();
@@ -181,6 +183,7 @@ public class PlayerHealth : MonoBehaviour
         deathTextSub.enabled = false;
         deathCanvas.enabled = false;
         gameObject.SetActive(false);
+        musicPlayer.Play();
     }
 
 
