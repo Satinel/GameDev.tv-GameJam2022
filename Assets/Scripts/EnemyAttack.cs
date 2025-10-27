@@ -12,7 +12,7 @@ public class EnemyAttack : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             other.GetComponent<PlayerHealth>().DecreaseHealth(damage * size);
-            Debug.Log("I hit " + other.gameObject.name + " for " + damage * size);
+            // Debug.Log("I hit " + other.gameObject.name + " for " + damage * size);
         }
     }
 

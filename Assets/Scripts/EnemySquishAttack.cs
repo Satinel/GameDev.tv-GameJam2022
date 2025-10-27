@@ -13,7 +13,7 @@ public class EnemySquishAttack : MonoBehaviour
         {
             other.GetComponent<PlayerHealth>().DecreaseHealth(damage * size);
             other.GetComponent<PlayerHealth>().SquishThatRat();
-            Debug.Log("I squished " + other.gameObject.name + "!");
+            // Debug.Log("I squished " + other.gameObject.name + "!");
         }
     }
 }

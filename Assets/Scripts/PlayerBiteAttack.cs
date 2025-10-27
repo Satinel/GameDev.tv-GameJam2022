@@ -13,7 +13,7 @@ public class PlayerBiteAttack : MonoBehaviour
     void Start()
     {
         playerHealth = GetComponentInParent<PlayerHealth>();
-        Debug.Log(playerHealth);
+        // Debug.Log(playerHealth);
     }
 
     void OnTriggerEnter(Collider other)
@@ -21,11 +21,11 @@ public class PlayerBiteAttack : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
             int playerSize = playerHealth.GetCurrentSize();
-            Debug.Log("Player Size: " + playerSize);
+            // Debug.Log("Player Size: " + playerSize);
             other.GetComponent<Enemy>().getHit(damage * playerSize);
             biteFX.transform.localScale = new Vector3 (playerSize, playerSize, playerSize);
             Instantiate(biteFX, transform.position, Quaternion.identity);
-            Debug.Log("I bit " + other.gameObject.name + " for " + damage*playerSize);
+            // Debug.Log("I bit " + other.gameObject.name + " for " + damage*playerSize);
             // playerHealth.IncreaseHealth();
         }
 
@@ -35,7 +35,7 @@ public class PlayerBiteAttack : MonoBehaviour
             int playerSize = playerHealth.GetCurrentSize();
             biteFX.transform.localScale = new Vector3 (playerSize, playerSize, playerSize);
             Instantiate(biteFX, transform.position, Quaternion.identity);
-            Debug.Log("I ate " + other.gameObject.name + " and it was worth " + foodSource);
+            // Debug.Log("I ate " + other.gameObject.name + " and it was worth " + foodSource);
             playerHealth.IncreaseHealth();
             playerHealth.GainFood(foodSource);
         }

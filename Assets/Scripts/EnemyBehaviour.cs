@@ -104,12 +104,12 @@ public class EnemyBehaviour : MonoBehaviour
     {
         if (deadVersion.gameObject.activeInHierarchy)
         {
-            rboi.velocity = Vector3.zero;
+            rboi.linearVelocity = Vector3.zero;
             rboi.angularVelocity = Vector3.zero;
         }
         if (distanceToPlayer > aggroRange)
         {
-            rboi.velocity = Vector3.zero;
+            rboi.linearVelocity = Vector3.zero;
             rboi.angularVelocity = Vector3.zero;
         }
     }

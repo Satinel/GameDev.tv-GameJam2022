@@ -1,6 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerGhost : MonoBehaviour
@@ -10,11 +8,15 @@ public class PlayerGhost : MonoBehaviour
     int hostsRemaining = 10;
     GameObject host;
     ParticleSystem wisps;
+    BabyRat[] babyRats;
+
     // Material material;
 
     void Start()
     {
         wisps = GetComponent<ParticleSystem>();
+        babyRats = FindObjectsByType<BabyRat>(FindObjectsSortMode.None);
+        hostsRemaining = babyRats.Count();
     }
 
     void OnEnable()
@@ -26,7 +28,7 @@ public class PlayerGhost : MonoBehaviour
     }
     void ResetHosts()
     {
-        BabyRat[] babyRats = FindObjectsOfType<BabyRat>(includeInactive:true);
+        // BabyRat[] babyRats = FindObjectsOfType<BabyRat>(includeInactive:true);
         foreach (BabyRat babyRat in babyRats)
         {
             babyRat.gameObject.SetActive(true);
@@ -53,12 +55,14 @@ public class PlayerGhost : MonoBehaviour
         if (other.gameObject.tag == "Host")
         {
             canPossess = false;
+            wisps.Stop(true);
         }
     }
 
     
     void PossessHost()
     {
+        wisps.Stop(true);
         host.SetActive(false);
         hostsRemaining --;
         canPossess = false;

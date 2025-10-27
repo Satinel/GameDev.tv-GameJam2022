@@ -22,7 +22,7 @@ public class DungeonExit : MonoBehaviour
             audioSource.volume = 1;
             audioSource.PlayOneShot(victoryMusic);
             victoryCanvas.enabled = true;
-            Debug.Log("VICTORY!");
+            // Debug.Log("VICTORY!");
         }
     }
     

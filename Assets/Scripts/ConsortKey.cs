@@ -9,7 +9,7 @@ public class ConsortKey : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             other.GetComponent<CollectKeys>().DefeatedConsortSlime = true;
-            Debug.Log("You defeated the queen's consort!");
+            // Debug.Log("You defeated the queen's consort!");
         }
 
     }

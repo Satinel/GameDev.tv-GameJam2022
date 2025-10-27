@@ -9,7 +9,7 @@ public class SlimeKeyuun : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             other.GetComponent<CollectKeys>().DefeatedQueenSlime = true;
-            Debug.Log("You defeated the Queen Slime!");
+            // Debug.Log("You defeated the Queen Slime!");
         }
 
     }

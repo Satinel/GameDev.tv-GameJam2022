@@ -114,7 +114,7 @@ public class PlayerHealth : MonoBehaviour
             animator.SetBool("isDead", true);
             isInvincible = true;
             CreateCorpse();
-            Debug.Log("You Died");
+            // Debug.Log("You Died");
             Invoke("PlayerDeathProcess", 1f);
             playerMovement.isAttacking = true;
             return;
@@ -256,7 +256,7 @@ public class PlayerHealth : MonoBehaviour
 
     public int GetCurrentSize()
     {
-        Debug.Log(currentSize);
+        // Debug.Log(currentSize);
         return currentSize;
     }
     

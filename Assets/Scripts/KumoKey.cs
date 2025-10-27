@@ -10,7 +10,7 @@ public class KumoKey : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             other.GetComponent<CollectKeys>().DefeatedKumoko = true;
-            Debug.Log("You defeated Kumoko!");
+            // Debug.Log("You defeated Kumoko!");
         }
 
     }

@@ -9,7 +9,7 @@ public class FiratKey : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             other.GetComponent<CollectKeys>().DefeatedFireRat = true;
-            Debug.Log("You defeated Dire Fire Rat!");
+            // Debug.Log("You defeated Dire Fire Rat!");
         }
 
     }

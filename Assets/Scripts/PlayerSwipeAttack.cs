@@ -22,7 +22,7 @@ public class PlayerSwipeAttack : MonoBehaviour
             swipeFX.transform.localScale = new Vector3 (playerSize, playerSize, playerSize);
             Instantiate(swipeFX, transform.position, Quaternion.identity);
             other.GetComponent<Enemy>().getHit(damage * playerSize * 2);
-            Debug.Log("I hit " + other.gameObject.name + " for " + damage*playerSize * 2);
+            // Debug.Log("I hit " + other.gameObject.name + " for " + damage*playerSize * 2);
         }
     }
 
